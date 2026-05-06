@@ -1267,9 +1267,12 @@ function setLang(l) {
   });
   if(window._termPlay) window._termPlay();
   document.title = l === 'fr'
-    ? 'AIYDOU — Automatisez vos RH avec l\'Intelligence Artificielle'
-    : 'AIYDOU — Automate Your HR with Artificial Intelligence';
+    ? 'AIYDOU — Automatisez vos RH avec l\'IA que vous utilisez déjà'
+    : 'AIYDOU — Automate your HR with the AI you already have';
 }
+
+// Init EN on page load
+document.addEventListener('DOMContentLoaded', function() { setLang('en'); });
 
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
