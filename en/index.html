@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
+<link rel="alternate" hreflang="fr" href="https://aiydou.com/" />
+<link rel="alternate" hreflang="en" href="https://aiydou.com/en/" />
+<link rel="alternate" hreflang="x-default" href="https://aiydou.com/" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#4a6278">
@@ -526,9 +529,9 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
-      <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
       <div class="lang-sep"></div>
-      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
     </div>
     <button class="btn-nav" onclick="openDemoModal()" data-i18n="nav.cta">Demander une démo</button>
     <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -556,7 +559,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
         <h1>
           <span class="w" data-i18n="hero.line1">Automate your HR with the AI you <span class="t">already have</span></span>
         </h1>
-        <p class="hero-sub" data-i18n="hero.sub">Réduisez de 60% les tâches RH manuelles. Premier agent RH opérationnel en 6 semaines.</p>
+        <p class="hero-sub" data-i18n="hero.sub">Cut manual HR tasks by 60%. First HR agent live in 6 weeks.</p>
         <div class="hero-actions">
           <button class="btn-primary" onclick="openDemoModal()" data-i18n="hero.cta1">Démo gratuite 30 min →</button>
           <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" data-i18n="hero.cta2">Voir nos solutions</button>
@@ -669,8 +672,8 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <div class="container">
     <div class="sh reveal">
       <div class="section-label" data-i18n="svc.lbl">// Nos services</div>
-      <h2 data-i18n="svc.h2">De l'audit au déploiement — en 6 semaines</h2>
-      <p class="section-sub" data-i18n="svc.sub">Un partenaire unique qui connaît les RH de l'intérieur et maîtrise l'IA en production. Pas l'un ou l'autre.</p>
+      <h2 data-i18n="svc.h2">From audit to deployment — in 6 weeks</h2>
+      <p class="section-sub" data-i18n="svc.sub">A unique partner who knows HR from the inside and masters AI in production. Not one or the other.</p>
     </div>
     <div class="svc-grid reveal">
       <div class="sc"><div class="sc-num">01</div><div><h3 data-i18n="svc.s1h">Audit & Stratégie IA</h3><p data-i18n="svc.s1p">Analyse de vos processus RH, identification des opportunités et feuille de route avec estimation du ROI.</p><div class="stags"><span class="stag" data-i18n="svc.s1t1">Diagnostic</span><span class="stag" data-i18n="svc.s1t2">Roadmap</span><span class="stag" data-i18n="svc.s1t3">Quick wins</span></div></div></div>
@@ -686,8 +689,8 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <div class="container">
     <div class="sh c reveal">
       <div class="section-label" data-i18n="uc.lbl">// Cas d'usage</div>
-      <h2 data-i18n="uc.h2">Un agent pour chaque moment critique du parcours RH</h2>
-      <p class="section-sub" data-i18n="uc.sub">Des workflows pré-configurés sur les tâches les plus chronophages. Actifs en quelques clics — sans développeur.</p>
+      <h2 data-i18n="uc.h2">An agent for every critical HR moment</h2>
+      <p class="section-sub" data-i18n="uc.sub">Pre-configured workflows for your most time-consuming tasks. Live in a few clicks — no developer needed.</p>
     </div>
     <div class="uc-grid reveal">
       <div class="uc"><span class="uc-icon">🎯</span><h3 data-i18n="uc.u1h">Agent Recrutement</h3><ul class="uc-list"><li data-i18n="uc.u1f1">Tri & scoring automatique des CV</li><li data-i18n="uc.u1f2">Pré-qualification par chatbot</li><li data-i18n="uc.u1f3">Planification des entretiens</li><li data-i18n="uc.u1f4">Rédaction des offres d'emploi</li><li data-i18n="uc.u1f5">Rapport candidat objectif</li></ul><a class="uc-btn" href="https://aiydou.gumroad.com/l/postcraft" target="_blank" rel="noopener" data-i18n="uc.tryfree">Essayer gratuitement →</a></div>
@@ -765,8 +768,8 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <div class="container">
     <div class="sh c reveal">
       <div class="section-label" data-i18n="pr.lbl">// Offres</div>
-      <h2 data-i18n="pr.h2">Des formules claires — déploiement inclus, ROI garanti</h2>
-      <p class="section-sub" data-i18n="pr.sub">Pas de frais cachés. Pas de surprise. L'abonnement mensuel couvre le <strong>Prompt Ops</strong> — la maintenance active de vos agents pour qu'ils restent performants.</p>
+      <h2 data-i18n="pr.h2">Clear pricing — deployment included, ROI guaranteed</h2>
+      <p class="section-sub" data-i18n="pr.sub">No hidden fees. No surprises. The monthly subscription covers <strong>Prompt Ops</strong> — the active maintenance of your agents so they stay sharp.</p>
     </div>
 
     <div class="pricing-intro reveal">
@@ -808,7 +811,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
             <li data-i18n="pr.sop4">Support ticket 48h</li>
           </ul>
         </div>
-        <button class="pbtn" onclick="openDemoModal()" data-i18n="pr.btn1">Réserver mon audit gratuit →</button>
+        <button class="pbtn" onclick="openDemoModal()" data-i18n="pr.btn1">Book my free audit →</button>
       </div>
 
       <!-- BUSINESS -->
@@ -837,7 +840,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
             <li data-i18n="pr.bop5">Support prioritaire 4h (Slack/Teams)</li>
           </ul>
         </div>
-        <button class="pbtn" onclick="openDemoModal()" data-i18n="pr.btn1">Réserver mon audit gratuit →</button>
+        <button class="pbtn" onclick="openDemoModal()" data-i18n="pr.btn1">Book my free audit →</button>
       </div>
 
       <!-- ENTERPRISE -->
@@ -877,13 +880,13 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <div class="container">
     <div class="cta-inner reveal">
       <div class="section-label" data-i18n="cta.lbl">// Passez à l'action</div>
-      <h2 data-i18n="cta.h2">Vos RH méritent mieux que des tableurs.</h2>
-      <p class="section-sub" data-i18n="cta.sub">Réservez un audit gratuit de 30 minutes. On identifie ensemble ce qu'on peut automatiser pour vous — et on vous dit combien ça vous fait gagner.</p>
+      <h2 data-i18n="cta.h2">Your HR team deserves better than spreadsheets.</h2>
+      <p class="section-sub" data-i18n="cta.sub">Book a free 30-minute audit. We'll identify together what we can automate for you — and tell you exactly what you'll gain.</p>
       <div class="cta-btns">
-        <button class="btn-primary" onclick="openDemoModal()" data-i18n="cta.btn1">Réserver mon audit gratuit →</button>
+        <button class="btn-primary" onclick="openDemoModal()" data-i18n="cta.btn1">Book my free audit →</button>
         <button class="btn-outline" data-i18n="cta.btn2">Voir les cas clients</button>
       </div>
-      <p class="cta-note" data-i18n="cta.note">Sans engagement · Sans carte bancaire · Réponse sous 24h</p>
+      <p class="cta-note" data-i18n="cta.note">No commitment · No credit card · Reply within 24h</p>
     </div>
   </div>
 </section>
@@ -1249,7 +1252,7 @@ en: {
   "f.about":"About","f.blog":"Blog","f.legal":"Legal","f.privacy":"Privacy","f.contact":"Contact","f.copy":"© 2025 AIYDOU · connect@aiydou.com"
 }};
 
-let lang = 'fr';
+let lang = 'en';
 
 function setLang(l) {
   lang = l;
@@ -1267,6 +1270,8 @@ function setLang(l) {
     ? 'AIYDOU — Automatisez vos RH avec l\'IA que vous utilisez déjà'
     : 'AIYDOU — Automate your HR with the AI you already have';
 }
+
+document.addEventListener('DOMContentLoaded', function() { setLang('en'); });
 
 function toggleMenu() {
   const menu = document.getElementById('mobileMenu');
