@@ -533,7 +533,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
       <div class="lang-sep"></div>
       <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
     </div>
-    <button class="btn-nav" onclick="openDemoModal()" data-i18n="nav.cta">Book a Demo</button>
+    <button class="btn-nav" onclick="openDemoModal()" data-i18n="nav.cta">Demander une démo</button>
     <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -546,7 +546,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <a href="#usecases"   data-i18n="nav.usecases"   onclick="closeMenu()">Use cases</a>
   <a href="#pricing"    data-i18n="nav.pricing"    onclick="closeMenu()">Pricing</a>
   <a href="#whyus"      data-i18n="nav.about"      onclick="closeMenu()">About us</a>
-  <button class="nav-mobile-cta" onclick="openDemoModal();closeMenu()" data-i18n="nav.cta">Book a Demo</button>
+  <button class="nav-mobile-cta" onclick="openDemoModal();closeMenu()" data-i18n="nav.cta">Demander une démo</button>
 </div>
 
 <!-- HERO -->
@@ -561,13 +561,13 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
         </h1>
         <p class="hero-sub" data-i18n="hero.sub">AIYDOU conçoit des agents intelligents sur Gemini, Copilot ou Claude — directement dans les outils que votre entreprise utilise déjà.</p>
         <div class="hero-actions">
-          <button class="btn-primary" onclick="openDemoModal()" data-i18n="hero.cta1">Free 30-min Demo →</button>
-          <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" data-i18n="hero.cta2">Explore Solutions</button>
+          <button class="btn-primary" onclick="openDemoModal()" data-i18n="hero.cta1">Démo gratuite 30 min →</button>
+          <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" data-i18n="hero.cta2">Voir nos solutions</button>
         </div>
         <div class="hero-stats">
-          <div class="stat"><strong data-i18n="hero.s1v">−65%</strong><span data-i18n="hero.s1l">manual HR tasks</span></div>
-          <div class="stat"><strong data-i18n="hero.s2v">×3.2</strong><span data-i18n="hero.s2l">ROI in 12 months</span></div>
-          <div class="stat"><strong data-i18n="hero.s3v">6 sem.</strong><span data-i18n="hero.s3l">first agent live</span></div>
+          <div class="stat"><strong data-i18n="hero.s1v">−65%</strong><span data-i18n="hero.s1l">tâches RH manuelles</span></div>
+          <div class="stat"><strong data-i18n="hero.s2v">×3.2</strong><span data-i18n="hero.s2l">ROI en 12 mois</span></div>
+          <div class="stat"><strong data-i18n="hero.s3v">6 sem.</strong><span data-i18n="hero.s3l">premier agent opérationnel</span></div>
         </div>
       </div>
       <div>
@@ -1271,7 +1271,6 @@ function setLang(l) {
     : 'AIYDOU — Automate your HR with the AI you already have';
 }
 
-// Init EN on page load
 document.addEventListener('DOMContentLoaded', function() { setLang('en'); });
 
 function toggleMenu() {
