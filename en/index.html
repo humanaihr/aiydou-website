@@ -524,6 +524,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <ul class="nav-links">
     <li><a href="#services"    data-i18n="nav.solutions">Solutions</a></li>
     <li><a href="#usecases"   data-i18n="nav.usecases">Use cases</a></li>
+    <li><a href="#formation" data-i18n="nav.formation">Formation</a></li>
     <li><a href="#pricing"    data-i18n="nav.pricing">Pricing</a></li>
     <li><a href="#whyus"      data-i18n="nav.about">About us</a></li>
   </ul>
@@ -544,6 +545,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
 <div class="nav-mobile" id="mobileMenu">
   <a href="#services"    data-i18n="nav.solutions"  onclick="closeMenu()">Solutions</a>
   <a href="#usecases"   data-i18n="nav.usecases"   onclick="closeMenu()">Use cases</a>
+  <a href="#formation" data-i18n="nav.formation" onclick="closeMenu()">Formation</a>
   <a href="#pricing"    data-i18n="nav.pricing"    onclick="closeMenu()">Pricing</a>
   <a href="#whyus"      data-i18n="nav.about"      onclick="closeMenu()">About us</a>
   <button class="nav-mobile-cta" onclick="openDemoModal();closeMenu()" data-i18n="nav.cta">Demander une démo</button>
@@ -763,6 +765,75 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
+<!-- FORMATION -->
+<section id="formation" style="background:var(--bg2);">
+  <div class="container">
+    <div class="sh c reveal">
+      <div class="section-label" data-i18n="form.lbl">// Formation IA</div>
+      <h2 data-i18n="form.h2">Vos équipes RH, formées à l'IA en 2 jours</h2>
+      <p class="section-sub" data-i18n="form.sub">Pas juste l'outil — la compétence. On forme vos équipes RH à utiliser, superviser et optimiser leurs agents IA durablement.</p>
+    </div>
+
+    <div class="prc-grid reveal" style="grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;">
+
+      <div class="plan">
+        <div style="font-size:2rem;margin-bottom:12px;">🎓</div>
+        <div class="pname" data-i18n="form.f1.title">Workshop Intensif</div>
+        <div class="ptgt" data-i18n="form.f1.sub">Présentiel ou distanciel · 2 jours</div>
+        <div class="pprice-setup" data-i18n="form.f1.price">1 900€</div>
+        <div class="pprice-recur" data-i18n="form.f1.per">par session · jusqu'à 12 participants</div>
+        <hr class="pdiv">
+        <ul class="pfeats">
+          <li data-i18n="form.f1.l1">Comprendre l'IA et les agents RH</li>
+          <li data-i18n="form.f1.l2">Superviser et corriger un agent</li>
+          <li data-i18n="form.f1.l3">Cas pratiques sur vos propres processus</li>
+          <li data-i18n="form.f1.l4">Certification AIYDOU incluse</li>
+        </ul>
+        <button class="pbtn" onclick="openFormationModal()" data-i18n="form.cta1">Réserver une session →</button>
+      </div>
+
+      <div class="plan feat" data-label-fr="Populaire" data-label-en="Popular">
+        <div style="font-size:2rem;margin-bottom:12px;">📚</div>
+        <div class="pname" data-i18n="form.f2.title">Programme E-learning</div>
+        <div class="ptgt" data-i18n="form.f2.sub">À votre rythme · accès 12 mois</div>
+        <div class="pprice-setup" data-i18n="form.f2.price">490€</div>
+        <div class="pprice-recur" data-i18n="form.f2.per">par collaborateur / an</div>
+        <hr class="pdiv">
+        <ul class="pfeats">
+          <li data-i18n="form.f2.l1">6 modules vidéo RH × IA</li>
+          <li data-i18n="form.f2.l2">Exercices pratiques guidés</li>
+          <li data-i18n="form.f2.l3">Mises à jour incluses (nouvelles lois, nouveaux LLM)</li>
+          <li data-i18n="form.f2.l4">Tableau de bord progression équipe</li>
+        </ul>
+        <button class="pbtn" onclick="openFormationModal()" data-i18n="form.cta1">Démarrer l'accès →</button>
+      </div>
+
+      <div class="plan">
+        <div style="font-size:2rem;margin-bottom:12px;">🔄</div>
+        <div class="pname" data-i18n="form.f3.title">Coaching Mensuel</div>
+        <div class="ptgt" data-i18n="form.f3.sub">Accompagnement continu · post-déploiement</div>
+        <div class="pprice-setup" data-i18n="form.f3.price">390€</div>
+        <div class="pprice-recur" data-i18n="form.f3.per">par mois · sans engagement</div>
+        <hr class="pdiv">
+        <ul class="pfeats">
+          <li data-i18n="form.f3.l1">2 sessions live par mois (1h chacune)</li>
+          <li data-i18n="form.f3.l2">Réponses illimitées par messagerie</li>
+          <li data-i18n="form.f3.l3">Revue des performances de vos agents</li>
+          <li data-i18n="form.f3.l4">Optimisations recommandées chaque mois</li>
+        </ul>
+        <button class="pbtn" onclick="openFormationModal()" data-i18n="form.cta2">Parler à un formateur →</button>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="margin-top:32px;text-align:center;">
+      <p style="font-size:0.95rem;color:var(--muted);" data-i18n="form.note">Formation éligible OPCO · Prise en charge possible jusqu'à 100%</p>
+      <a href="formation.html" style="display:inline-block;margin-top:14px;font-weight:600;color:var(--teal);text-decoration:none;font-size:0.95rem;" data-i18n="form.link">Voir le programme complet →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
 <!-- PRICING -->
 <section id="pricing">
   <div class="container">
@@ -1103,8 +1174,17 @@ fr: {
 },
 en: {
   "nav.problem":"Problem","nav.platforms":"Platforms","nav.solutions":"Solutions","nav.services":"Services",
-  "nav.usecases":"Use Cases","nav.results":"Results","nav.pricing":"Pricing","nav.about":"About us","nav.cta":"Book a Demo",
-  
+  "nav.usecases":"Use Cases","nav.formation":"Training","nav.results":"Results","nav.pricing":"Pricing","nav.about":"About us","nav.cta":"Book a Demo",
+  "form.lbl":"// AI Training","form.h2":"Your HR team, AI-trained in 2 days","form.sub":"Not just the tool — the skill. We train your HR teams to use, supervise and optimise their AI agents for the long run.",
+  "form.f1.title":"Intensive Workshop","form.f1.sub":"On-site or remote · 2 days","form.f1.price":"€1,900","form.f1.per":"per session · up to 12 participants",
+  "form.f1.l1":"Understanding AI and HR agents","form.f1.l2":"Supervising and correcting an agent","form.f1.l3":"Hands-on with your own processes","form.f1.l4":"AIYDOU certification included",
+  "form.f2.title":"E-learning Programme","form.f2.sub":"At your own pace · 12-month access","form.f2.price":"€490","form.f2.per":"per employee / year",
+  "form.f2.l1":"6 video modules HR × AI","form.f2.l2":"Guided practical exercises","form.f2.l3":"Updates included (new laws, new LLMs)","form.f2.l4":"Team progress dashboard",
+  "form.f3.title":"Monthly Coaching","form.f3.sub":"Ongoing support · post-deployment","form.f3.price":"€390","form.f3.per":"per month · no commitment",
+  "form.f3.l1":"2 live sessions per month (1h each)","form.f3.l2":"Unlimited messaging support","form.f3.l3":"Agent performance review","form.f3.l4":"Monthly optimisation recommendations",
+  "form.cta1":"Book a session →","form.cta2":"Talk to a trainer →",
+  "form.note":"CPD-eligible training · Up to 100% funding available","form.link":"See the full programme →",
+
   "hero.line1":"Automate your HR with the AI you <span class='t'>already have</span>",
   "hero.sub":"Cut manual HR tasks by 60%. First HR agent live in 6 weeks.",
   "hero.cta1":"Free 30-min Demo →","hero.cta2":"Explore Solutions",
@@ -1350,29 +1430,25 @@ function submitDemo(){
   if(!fname||!email){alert('Veuillez renseigner votre prénom et email.');return;}
 
   // Send email via Web3Forms (free, no backend needed)
-  const formData = new FormData();
-  formData.append('access_key', 'cc101d20-2438-4ed5-9c60-fb91819eae7b');
-  formData.append('to', 'connect@aiydou.com');
-  formData.append('subject', 'Nouvelle demande de démo - AIYDOU');
-  formData.append('from_name', 'AIYDOU Site');
-  formData.append('message',
-    `Nouvelle demande de démo:\n\n` +
-    `Prénom: ${fname}\n` +
-    `Nom: ${lname}\n` +
-    `Email: ${email}\n` +
-    `Poste: ${job}\n` +
-    `Entreprise: ${company}`
-  );
-  formData.append('email', email);
-
-  fetch('https://api.web3forms.com/submit', { method:'POST', body: formData })
+  fetch('https://formspree.io/f/xqenyqva', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({
+      email: email,
+      subject: 'Nouvelle demande de démo - AIYDOU',
+      prenom: fname,
+      nom: lname,
+      poste: job,
+      entreprise: company,
+      message: `Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}`
+    })
+  })
     .then(r => r.json())
-    .then(data => {
+    .then(() => {
       document.getElementById('demoForm').style.display='none';
       document.getElementById('demoSuccess').style.display='block';
     })
     .catch(() => {
-      // Fallback: still show success
       document.getElementById('demoForm').style.display='none';
       document.getElementById('demoSuccess').style.display='block';
     });
