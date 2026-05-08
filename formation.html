@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Formez vos équipes RH à l'IA en 2 jours. Expert RH & IA, 17 ans d'expérience. Workshop, e-learning, coaching. Éligible OPCO.">
+<title>AIYDOU Formation — Formez vos équipes RH à l'IA en 2 jours</title>
+<link rel="alternate" hreflang="fr" href="https://aiydou.com/formation" />
+<link rel="alternate" hreflang="en" href="https://aiydou.com/en/formation" />
+<style>
+.reveal { opacity: 1 !important; transform: none !important; visibility: visible !important; }
+
+:root {
+  --navy:   #ffffff;
+  --navy2:  #f5f7ff;
+  --navy3:  #eef2ff;
+  --teal:   #1a56db;
+  --teal2:  #1648c0;
+  --gold:   #3b82f6;
+  --white:  #111827;
+  --gray:   #374151;
+  --light:  #6b7280;
+  --border: rgba(26,86,219,0.15);
+  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+  --mono:   'DM Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--navy); color: var(--white); font-family: var(--sans); overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 80px;
+  background: #ffffff; backdrop-filter: none;
+  border-bottom: 1px solid rgba(0,0,0,.08); box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.nav-logo { font-family: var(--sans); font-size: 1.4rem; font-weight: 700; color: #111827; letter-spacing: -0.02em; }
+.nav-logo em { font-style: normal; color: var(--teal); }
+.nav-links { display: flex; gap: 2.2rem; list-style: none; }
+.nav-links a { font-size: .875rem; font-weight: 500; color: #374151; text-decoration: none; transition: color .15s; }
+.nav-links a:hover, .nav-links a.active { color: var(--teal); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.lang-toggle { display: flex; align-items: center; border: 1px solid rgba(0,0,0,.15); overflow: hidden; font-size: .72rem; font-weight: 600; letter-spacing: .07em; }
+.lang-btn { padding: 6px 11px; border: none; background: transparent; color: #374151; cursor: pointer; font-family: var(--sans); font-size: inherit; font-weight: inherit; letter-spacing: inherit; transition: all .15s; line-height: 1; }
+.lang-btn.active { background: var(--teal); color: var(--navy); }
+.lang-btn:not(.active):hover { color: var(--teal); }
+.lang-sep { width: 1px; background: rgba(0,0,0,.15); height: 18px; }
+.btn-nav { background: var(--teal); color: #ffffff; border: none; padding: 9px 22px; font-family: var(--sans); font-size: .875rem; font-weight: 700; cursor: pointer; transition: all .15s; }
+.btn-nav:hover { background: var(--teal2); transform: translateY(-1px); }
+
+/* ── HERO ── */
+#hero { min-height: 100vh; display: flex; align-items: center; padding-top: 96px; position: relative; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 70% 60% at 70% 40%, rgba(26,86,219,.06) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 20% 80%, rgba(240,180,41,.04) 0%, transparent 55%);
+}
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(26,86,219,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(26,86,219,.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 75%);
+}
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+h1 {
+  font-family: var(--sans);
+  font-size: clamp(3rem, 5.5vw, 4.8rem);
+  font-weight: 900; line-height: 1.05; letter-spacing: -.03em;
+}
+h1 .w { color: var(--white); }
+h1 .t { color: var(--teal); font-style: normal; font-weight: 700; }
+h1 .g { color: var(--teal); }
+em.t { color: var(--teal); font-style: italic; }
+
+.hero-sub { margin-top: 20px; font-size: 1.05rem; color: var(--gray); line-height: 1.7; max-width: 480px; }
+.hero-actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn-primary { background: var(--teal); color: var(--navy); border: none; padding: 13px 28px; font-family: var(--sans); font-size: .95rem; font-weight: 700; cursor: pointer; transition: all .2s; }
+.btn-primary:hover { background: var(--teal2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,86,219,.3); }
+.btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.2); padding: 13px 28px; font-family: var(--sans); font-size: .95rem; font-weight: 500; cursor: pointer; transition: all .2s; }
+.btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+.hero-stats { display: flex; gap: 32px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+.stat strong { display: block; font-family: var(--sans); font-size: 2rem; font-weight: 800; color: var(--teal); line-height: 1; letter-spacing: -.02em; }
+.stat span { font-size: .8rem; color: var(--gray); margin-top: 4px; display: block; }
+
+/* Terminal */
+.terminal { background: var(--navy3); border: 1px solid rgba(0,0,0,.08); overflow: hidden; box-shadow: 0 32px 64px rgba(0,0,0,.4); }
+.term-bar { background: #141e2e; padding: 12px 16px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(255,255,255,.06); }
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot-r{background:#ff5f57} .dot-y{background:#febc2e} .dot-g{background:#28c840}
+.term-label { font-family: var(--mono); font-size: .72rem; color: #556677; margin-left: 8px; }
+.term-body { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.msg { display: flex; gap: 12px; align-items: flex-start; opacity: 0; animation: fadeUp .4s ease forwards; }
+.msg:nth-child(1){animation-delay:.5s} .msg:nth-child(2){animation-delay:1.1s}
+.msg:nth-child(3){animation-delay:1.7s} .msg:nth-child(4){animation-delay:2.3s} .msg:nth-child(5){animation-delay:2.9s}
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.av { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.av-rh { background: rgba(240,180,41,.2); color: var(--teal); border: 1px solid rgba(240,180,41,.3); }
+.av-ai { background: rgba(26,86,219,.2); color: var(--teal); border: 1px solid rgba(26,86,219,.35); }
+.bubble { flex: 1; border-left: 2px solid rgba(255,255,255,.08); padding: 8px 12px; }
+.bubble.ai { border-left-color: var(--teal); }
+.bubble.rh { border-left-color: var(--teal); }
+.bubble-label { font-family: var(--mono); font-size: .65rem; font-weight: 500; margin-bottom: 5px; }
+.bubble.ai .bubble-label { color: var(--teal); }
+.bubble.rh .bubble-label { color: var(--teal); }
+.bubble p { font-size: .84rem; color: #c8d8e8; line-height: 1.55; }
+.chips { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+.chip { background: rgba(26,86,219,.15); border: 1px solid rgba(26,86,219,.3); color: var(--teal); padding: 3px 9px; font-family: var(--mono); font-size: .7rem; }
+
+/* ── SECTIONS ── */
+section { padding: 96px 0; }
+.section-label { font-family: var(--mono); font-size: .72rem; color: var(--teal); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px; }
+h2 { font-family: var(--sans); font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 700; line-height: 1.15; letter-spacing: -.02em; }
+.section-sub { font-size: 1rem; color: var(--gray); line-height: 1.7; max-width: 560px; margin-top: 12px; }
+.sh { margin-bottom: 52px; }
+.sh.c { text-align: center; }
+.sh.c .section-sub { margin-inline: auto; }
+
+/* ── PROBLEM ── */
+#problem { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.problem-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.pc {
+  background: var(--navy3); border: 1px solid rgba(255,255,255,.06);
+  padding: 32px 28px; position: relative; overflow: hidden; transition: border-color .2s;
+}
+.pc::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--teal); transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+.pc:hover { border-color: rgba(26,86,219,.3); }
+.pc:hover::before { transform: scaleX(1); }
+.pc-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+.pc h3 { font-weight: 700; font-size: 1.05rem; color: var(--white); margin-bottom: 8px; }
+.pc p { font-size: .875rem; color: var(--gray); line-height: 1.65; }
+.pc-stat { font-family: var(--sans); font-size: 2rem; font-weight: 700; color: var(--teal); display: block; margin-top: 16px; line-height: 1; }
+.pc-stat small { font-family: var(--sans); font-size: .78rem; font-weight: 400; color: var(--gray); display: block; margin-top: 3px; }
+
+/* ── PLATFORMS ── */
+#platforms { background: var(--navy); }
+.pl-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-bottom: 52px; }
+.callout { border: 1px solid rgba(240,180,41,.2); border-left: 3px solid var(--gold); padding: 24px 28px; background: rgba(240,180,41,.04); }
+.callout strong { font-size: .9rem; font-weight: 700; color: var(--white); display: block; margin-bottom: 8px; }
+.callout p { font-size: .875rem; color: var(--gray); line-height: 1.65; }
+.pl-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.plcard { background: var(--navy3); border: 1px solid rgba(0,0,0,.07); padding: 28px; transition: all .2s; position: relative; overflow: hidden; }
+.plcard::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--teal); transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+.plcard:hover { border-color: rgba(26,86,219,.3); transform: translateY(-3px); }
+.plcard:hover::after { transform: scaleX(1); }
+.pl-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.pl-logo { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; flex-shrink: 0; }
+.plg{background:#e8f0fe;color:#1a73e8} .plm{background:#e3f2fd;color:#0078d4} .plc{background:rgba(26,86,219,.15);color:var(--teal)}
+.pl-name { font-weight: 700; font-size: 1rem; color: var(--white); }
+.pl-sub { font-size: .75rem; color: var(--teal); margin-top: 2px; }
+.pl-desc { font-size: .875rem; color: var(--gray); line-height: 1.6; margin-bottom: 14px; }
+.pl-list { list-style: none; }
+.pl-list li { font-size: .83rem; color: var(--gray); padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,.06); display: flex; gap: 8px; }
+.pl-list li:last-child { border-bottom: none; }
+.pl-list li::before { content: '→'; color: var(--teal); flex-shrink: 0; }
+.pl-badge { display: inline-block; margin-top: 14px; padding: 3px 10px; background: rgba(26,86,219,.12); border: 1px solid rgba(26,86,219,.25); color: var(--teal); font-family: var(--mono); font-size: .7rem; }
+.compat { margin-top: 28px; padding: 18px 24px; background: var(--navy3); border: 1px solid rgba(255,255,255,.06); display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.compat-lbl { font-family: var(--mono); font-size: .72rem; color: var(--gray); white-space: nowrap; letter-spacing: .07em; }
+.cpills { display: flex; gap: 8px; flex-wrap: wrap; }
+.cpill { padding: 4px 12px; border: 1px solid rgba(255,255,255,.1); font-size: .78rem; color: var(--gray); font-weight: 500; transition: all .15s; }
+.cpill:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ── SERVICES ── */
+#services { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.svc-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+.sc { background: var(--navy3); border: 1px solid rgba(0,0,0,.07); padding: 36px 32px; display: flex; gap: 24px; transition: border-color .2s; }
+.sc:hover { border-color: rgba(26,86,219,.3); }
+.sc-num { font-family: var(--sans); font-size: 1.6rem; font-weight: 700; color: #1a56db; line-height: 1; flex-shrink: 0; width: 36px; }
+.sc h3 { font-weight: 700; font-size: 1.05rem; color: var(--white); margin-bottom: 8px; }
+.sc p { font-size: .875rem; color: var(--gray); line-height: 1.65; margin-bottom: 12px; }
+.stags { display: flex; flex-wrap: wrap; gap: 6px; }
+.stag { padding: 3px 10px; border: 1px solid rgba(26,86,219,.2); font-size: .72rem; color: var(--teal); }
+
+/* ── USE CASES ── */
+#usecases { background: var(--navy); border-top: 1px solid var(--border); }
+.uc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 0; }
+.uc { background: var(--navy3); border: 1px solid rgba(0,0,0,.07); padding: 28px 22px; transition: border-color .2s; }
+.uc:hover { border-color: rgba(26,86,219,.3); }
+.uc-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
+.uc h3 { font-weight: 700; font-size: .95rem; color: var(--white); margin-bottom: 14px; }
+.uc-list { list-style: none; }
+.uc-list li { font-size: .82rem; color: var(--gray); padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,.06); display: flex; gap: 8px; }
+.uc-list li:last-child { border-bottom: none; }
+.uc-list li::before { content: '·'; color: var(--teal); flex-shrink: 0; }
+.uc-btn { display: block; width: 100%; margin-top: 18px; padding: 10px 14px; background: transparent; border: 1.5px solid rgba(26,86,219,.35); color: var(--teal); font-family: var(--sans); font-size: .82rem; font-weight: 600; text-align: center; text-decoration: none; cursor: pointer; transition: all .2s; letter-spacing: .01em; }
+.uc-btn:hover { background: var(--teal); color: #ffffff; border-color: var(--teal); transform: translateY(-1px); }
+.uc-btn-demo { border-color: rgba(26,86,219,.2); color: var(--light); }
+.uc-btn-demo:hover { background: rgba(26,86,219,.08); color: var(--teal); border-color: var(--teal); transform: none; }
+
+/* ── RESULTS ── */
+#results { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-row { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid rgba(0,0,0,.07); margin-top: 48px; }
+.rcell { padding: 36px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,.07); transition: background .2s; }
+.rcell:last-child { border-right: none; }
+.rcell:hover { background: rgba(26,86,219,.04); }
+.rval { font-family: var(--sans); font-size: 3rem; font-weight: 700; color: var(--teal); line-height: 1; }
+.rlbl { font-size: .9rem; font-weight: 600; color: var(--white); margin-top: 8px; }
+.rsub { font-size: .78rem; color: var(--gray); margin-top: 4px; }
+.testi { margin-top: 32px; padding: 36px 40px; background: var(--navy3); border: 1px solid rgba(0,0,0,.07); border-left: 3px solid var(--gold); display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+.tq { font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: var(--light); line-height: 1.7; }
+.ta { font-size: .85rem; font-weight: 600; color: var(--teal); margin-top: 12px; }
+.tlogo-box { width: 64px; height: 64px; border-radius: 50%; background: rgba(26,86,219,.15); border: 1px solid rgba(26,86,219,.3); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 1.3rem; font-weight: 700; color: var(--teal); }
+.tlogo p { font-size: .75rem; color: var(--gray); margin-top: 6px; text-align: center; }
+
+/* ── METHODOLOGY ── */
+#methodology { background: var(--navy); border-top: 1px solid var(--border); }
+.phases { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; position: relative; }
+.phases::before { content: ''; position: absolute; top: 25px; left: 13%; right: 13%; height: 1px; background: rgba(26,86,219,.25); }
+.phase { text-align: center; }
+.pbubble { width: 52px; height: 52px; border-radius: 50%; background: var(--navy); border: 2px solid rgba(26,86,219,.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--white); position: relative; z-index: 1; transition: all .2s; }
+.phase:first-child .pbubble { background: var(--teal); border-color: var(--teal); color: var(--navy); }
+.phase:hover .pbubble { border-color: var(--teal); color: var(--teal); }
+.ptitle { font-family: var(--mono); font-size: .8rem; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--teal); margin-bottom: 4px; }
+.pweeks { font-size: .78rem; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
+.pdesc { font-size: .83rem; color: var(--gray); line-height: 1.6; }
+
+/* ── WHY US ── */
+#whyus { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.wc { background: var(--navy3); border: 1px solid rgba(0,0,0,.07); padding: 28px; transition: border-color .2s; }
+.wc:hover { border-color: rgba(26,86,219,.3); }
+.wicon { font-size: 1.5rem; margin-bottom: 12px; display: block; }
+.wc h3 { font-weight: 700; font-size: .95rem; color: var(--white); margin-bottom: 6px; }
+.wc p { font-size: .85rem; color: var(--gray); line-height: 1.65; }
+
+/* ── PRICING ── */
+#pricing { background: var(--navy); border-top: 1px solid var(--border); }
+.pricing-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-bottom: 44px; }
+.promptops-box { border: 1px solid rgba(26,86,219,.2); border-left: 3px solid var(--teal); padding: 22px 26px; background: rgba(26,86,219,.03); }
+.promptops-box strong { font-size: .9rem; font-weight: 700; color: var(--white); display: block; margin-bottom: 8px; }
+.promptops-box p { font-size: .875rem; color: var(--gray); line-height: 1.65; }
+.prc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.plan { background: #ffffff; box-shadow: 0 2px 16px rgba(0,0,0,.08); border: 1px solid rgba(0,0,0,.08); padding: 32px 26px; transition: all .2s; position: relative; }
+.plan:hover { transform: translateY(-2px); border-color: rgba(26,86,219,.25); }
+.plan.feat { border-color: var(--teal); box-shadow: 0 0 40px rgba(26,86,219,.1); }
+.plan.feat::before { content: attr(data-label); position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--teal); color: var(--navy); padding: 3px 14px; font-size: .7rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
+.pname { font-family: var(--sans); font-size: 1.5rem; font-weight: 700; color: #111827; }
+.plan.feat .pname { color: var(--teal); }
+.ptgt { font-size: .82rem; color: #6b7280; margin-top: 4px; }
+.pprice-setup { font-family: var(--sans); font-size: 1.6rem; font-weight: 700; margin-top: 16px; color: var(--teal); line-height: 1; }
+.pprice-recur { font-size: .8rem; color: var(--gray); margin-top: 5px; }
+.pprice-recur strong { color: var(--teal); font-weight: 600; }
+.pdiv { border: none; border-top: 1px solid rgba(0,0,0,.07); margin: 16px 0; }
+/* tier sections */
+.tier-block { margin-bottom: 14px; }
+.tier-lbl { display: inline-block; font-family: var(--mono); font-size: .63rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); background: rgba(26,86,219,.08); border: 1px solid rgba(26,86,219,.18); padding: 2px 9px; margin-bottom: 9px; }
+.pfeats { list-style: none; }
+.pfeats li { font-size: .85rem; color: #374151; padding: 6px 0; display: flex; gap: 10px; border-bottom: 1px solid rgba(0,0,0,.06); }
+.pfeats li:last-child { border-bottom: none; }
+.pfeats li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+.pfeats.ops li::before { content: '⚙'; font-size: .72rem; margin-top: 1px; }
+.pbtn { width: 100%; margin-top: 20px; padding: 12px; border: 1.5px solid rgba(26,86,219,.4); background: transparent; color: var(--teal); font-family: var(--sans); font-size: .9rem; font-weight: 600; cursor: pointer; transition: all .2s; }
+.pbtn:hover { background: var(--teal); color: var(--navy); }
+.plan.feat .pbtn { background: var(--teal); color: var(--navy); border-color: var(--teal); }
+.plan.feat .pbtn:hover { background: var(--teal2); border-color: var(--teal2); }
+@media(max-width:960px){ .pricing-intro { grid-template-columns: 1fr; gap: 24px; } }
+@media(max-width:600px){ .pricing-intro { grid-template-columns: 1fr; } }
+
+/* ── CTA ── */
+#cta { background: var(--navy2); border-top: 1px solid var(--border); padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
+#cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(26,86,219,.07) 0%, transparent 60%); pointer-events: none; }
+.cta-inner { position: relative; max-width: 640px; margin: 0 auto; }
+.cta-inner h2 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); color: var(--white); }
+.cta-inner .section-sub { margin: 16px auto 32px; }
+.cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.cta-note { font-size: .8rem; color: var(--gray); margin-top: 16px; }
+
+/* ── FOOTER ── */
+footer { background: var(--navy); border-top: 1px solid var(--border); padding: 56px 5% 32px; }
+.footer-main { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer-brand p { font-size: .875rem; color: var(--gray); margin-top: 14px; max-width: 320px; line-height: 1.65; }
+.footer-social { display: flex; gap: 14px; margin-top: 20px; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--border); color: var(--gray); text-decoration: none; font-size: 1rem; transition: all .15s; border-radius: 4px; }
+.footer-social a:hover { border-color: var(--teal); color: var(--teal); }
+.footer-col h4 { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--white); margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { font-size: .875rem; color: var(--gray); text-decoration: none; transition: color .15s; }
+.footer-col ul a:hover { color: var(--teal); }
+.footer-contact-item { display: flex; align-items: center; gap: 10px; font-size: .875rem; color: var(--gray); margin-bottom: 10px; }
+.footer-contact-item svg { flex-shrink: 0; opacity: .5; }
+.footer-contact-item a { color: var(--gray); text-decoration: none; transition: color .15s; }
+.footer-contact-item a:hover { color: var(--teal); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-bottom-links { display: flex; gap: 24px; list-style: none; }
+.footer-bottom-links a { font-size: .78rem; color: var(--gray); text-decoration: none; transition: color .15s; }
+.footer-bottom-links a:hover { color: var(--teal); }
+.fcopy { font-size: .78rem; color: var(--gray); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+/* ── HAMBURGER ── */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;z-index:201}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy2);border-top:1px solid var(--border);padding:16px 5% 24px;z-index:199;flex-direction:column;gap:4px}
+.nav-mobile.open{display:flex}
+.nav-mobile a{padding:12px 16px;font-size:1rem;font-weight:500;color:var(--gray);text-decoration:none;border-radius:6px;transition:all .15s;display:block}
+.nav-mobile a:hover,.nav-mobile a.active{background:rgba(26,86,219,.1);color:var(--teal)}
+.nav-mobile-cta{margin-top:12px;padding:13px 16px;background:var(--teal);color:var(--navy);font-family:var(--sans);font-size:.95rem;font-weight:700;border:none;cursor:pointer;border-radius:4px;width:100%;text-align:left}
+
+/* ── TABLET 960px ── */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}.terminal{display:none}
+  .hero-inner > div:first-child{text-align:center}
+  .hero-sub{max-width:100%;margin-inline:auto}
+  .hero-actions{justify-content:center}
+  .hero-stats{justify-content:center}
+  .pl-intro{grid-template-columns:1fr;gap:24px}
+  .pl-grid{grid-template-columns:1fr 1fr}
+  .problem-grid,.why-grid{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .uc-grid{grid-template-columns:1fr 1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .rcell:nth-child(2){border-right:none}
+  .rcell:nth-child(3){border-top:1px solid rgba(255,255,255,.07)}
+  .phases{grid-template-columns:1fr 1fr;gap:24px}.phases::before{display:none}
+  .prc-grid{grid-template-columns:1fr}
+  .testi{grid-template-columns:1fr}
+  .mkt-top{grid-template-columns:1fr;gap:24px}
+  .mkt-agents{grid-template-columns:1fr 1fr}
+  .mkt-stats-row{grid-template-columns:repeat(2,1fr);gap:12px}
+  .mkt-faq{grid-template-columns:1fr}
+  .bundle-row{grid-template-columns:1fr}.bundle-right{text-align:left}
+  .custom-row{flex-direction:column;gap:16px}
+  section{padding:72px 0}
+}
+
+/* ── MOBILE 600px — iPhone & Android ── */
+@media(max-width:600px){
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  *{max-width:100%;box-sizing:border-box}
+  body{overflow-x:hidden;-webkit-overflow-scrolling:touch}
+  nav{padding:0 4%;height:60px;
+    padding-left:max(16px,env(safe-area-inset-left));
+    padding-right:max(16px,env(safe-area-inset-right))}
+  .nav-links{display:none}
+  .nav-right .btn-nav{display:none}
+  .nav-hamburger{display:flex}
+  .nav-mobile{
+    padding-left:max(5%,env(safe-area-inset-left));
+    padding-right:max(5%,env(safe-area-inset-right))}
+  footer{padding-bottom:max(24px,env(safe-area-inset-bottom))}
+  section{padding:48px 0}
+  .container{padding:0 5%}
+  h1{font-size:2rem;line-height:1.1;letter-spacing:-.02em}
+  h2{font-size:1.6rem;line-height:1.2}
+  .section-sub{font-size:.9rem}
+  .hero-inner{gap:28px;padding-top:20px}
+  .hero-sub{font-size:.95rem;line-height:1.65}
+  .hero-stats{flex-wrap:wrap;gap:10px;justify-content:center}
+  .hero-stats .stat{min-width:85px;text-align:center;padding:10px}
+  .hero-stats .stat strong{font-size:1.6rem}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:10px}
+  .hero-actions .btn-primary,.hero-actions .btn-outline{
+    width:100%;text-align:center;padding:16px;font-size:1rem;
+    -webkit-tap-highlight-color:transparent}
+  .sh{margin-bottom:28px}
+  .pl-grid,.problem-grid,.why-grid,.uc-grid,.prc-grid,.phases,.svc-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .phases{gap:16px}
+  .phase{text-align:left;display:flex;gap:16px;align-items:flex-start}
+  .pbubble{flex-shrink:0;margin:0}
+  .pl-card,.wc{padding:20px}
+  .rcell{padding:24px 16px}
+  .testi{padding:20px 16px;grid-template-columns:1fr}
+  .mkt-top{
+    grid-template-columns:1fr !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:20px !important;
+    overflow:hidden
+  }
+  .mkt-stats-box{padding:14px 16px;overflow:hidden;width:100%;box-sizing:border-box}
+  .mkt-stats-row{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:8px;overflow:hidden
+  }
+  .mkt-stat{overflow:hidden}
+  .mkt-stat strong{font-size:1.3rem}
+  .mkt-stat span{font-size:.72rem}
+  .mkt-badges{gap:6px}
+  .mkt-badge{font-size:.7rem;padding:4px 10px}
+  .mkt-agents{grid-template-columns:1fr;gap:14px}
+  .acard{width:100%}
+  .acard-head{padding:18px 16px 0}
+  .acard-icon{width:42px;height:42px;font-size:1.3rem;margin-bottom:10px}
+  .acard-name{font-size:1.1rem}
+  .acard-price{padding:12px 16px}
+  .price-num{font-size:1.8rem}
+  .acard-feats{padding:12px 16px}
+  .feat-list li{font-size:.82rem;padding:5px 0}
+  .acard-plats{padding:0 16px 10px}
+  .acard-foot{padding:10px 16px 18px}
+  .acard-btn{font-size:.95rem;padding:14px;min-height:50px;
+    -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  .acard-custom{grid-column:1 !important;flex-direction:column !important;padding:22px 16px !important;text-align:center}
+  .mkt-faq{grid-template-columns:1fr !important;gap:10px;display:flex !important;flex-direction:column !important}
+  .faq-card{padding:16px}
+  .bundle-row{
+    padding:20px 16px !important;
+    grid-template-columns:1fr !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:20px !important;
+    overflow:hidden
+  }
+  .bundle-right{text-align:left !important;margin-top:0;width:100%}
+  .bundle-price{font-size:2rem}
+  .bundle-was,.bundle-mo,.bundle-save{display:block}
+  .bundle-btn{
+    width:100% !important;text-align:center;padding:15px;min-height:50px;
+    display:block;-webkit-tap-highlight-color:transparent
+  }
+  .bundle-pills{gap:6px;flex-wrap:wrap}
+  .bundle-pill{font-size:.7rem}
+  .plan{padding:24px 20px}
+  .cta-btns{flex-direction:column;align-items:stretch;gap:10px}
+  .cta-btns .btn-primary,.cta-btns .btn-outline{width:100%;text-align:center;padding:16px;min-height:50px}
+  .cta-note{font-size:.75rem}
+  footer{flex-direction:column;align-items:flex-start;gap:16px;padding:28px 5%}
+  .footer-links{flex-wrap:wrap;gap:10px}
+  a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  input,select,textarea{font-size:16px}
+  .acard-btn,.btn-primary,.btn-outline,.bundle-btn,.nav-mobile-cta{min-height:50px}
+}
+
+/* DROPDOWN NAV */
+.nav-dropdown { position: relative; }
+.nav-drop-trigger { display: flex; align-items: center; gap: 4px; }
+.nav-drop-trigger::after { content: '▾'; font-size: .65rem; opacity: .5; }
+.nav-drop-menu {
+  display: none; position: absolute; top: calc(100% + 12px); left: 50%;
+  transform: translateX(-50%); background: var(--navy3); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px; list-style: none; min-width: 180px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.4); z-index: 200;
+}
+.nav-drop-menu::before {
+  content: ''; position: absolute; top: -6px; left: 50%;
+  width: 10px; height: 10px; background: var(--navy3); border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border); transform: translateX(-50%) rotate(45deg);
+}
+.nav-drop-menu li a {
+  display: block; padding: 9px 14px; font-size: .875rem; font-weight: 500;
+  color: var(--gray); text-decoration: none; border-radius: 5px; transition: all .15s;
+  white-space: nowrap;
+}
+.nav-drop-menu li a:hover { background: rgba(26,86,219,.1); color: var(--teal); }
+.nav-dropdown:hover .nav-drop-menu { display: block; }
+.nav-logo-link{text-decoration:none;display:flex;align-items:center;color:var(--white);flex-shrink:0}
+/* Touch targets */
+@media(max-width:600px){
+  .acard-btn,.btn-primary,.btn-outline,.btn-nav,.bundle-btn,.nav-mobile-cta{min-height:48px;font-size:1rem}
+  .nav-links a,.nav-mobile a{min-height:44px;display:flex;align-items:center}
+  .feat-list li{padding:6px 0}
+  .acard-price{padding:14px 20px}
+  .acard-head{padding:20px 20px 0}
+  .acard-feats{padding:14px 20px}
+  .acard-plats{padding:0 20px 10px}
+  .acard-foot{padding:12px 20px 20px}
+}
+
+.hrow{display:flex;gap:10px;align-items:flex-start;opacity:0;transition:opacity .4s ease,transform .4s ease;transform:translateY(8px)}
+.hrow.show{opacity:1;transform:translateY(0)}
+.ht-dots{display:flex;gap:4px;align-items:center;padding:4px 0}
+.ht-dots span{width:5px;height:5px;border-radius:50%;background:#1a56db;animation:htb 1.2s infinite}
+.ht-dots span:nth-child(2){animation-delay:.2s}
+.ht-dots span:nth-child(3){animation-delay:.4s}
+@keyframes htb{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-4px);opacity:1}}
+
+/* ── DEMO MODAL ── */
+.demo-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;align-items:center;justify-content:center;padding:20px}
+.demo-overlay.show{display:flex}
+.demo-modal{background:#fff;border-radius:16px;padding:36px 32px;max-width:540px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.2);position:relative;max-height:90vh;overflow-y:auto}
+.demo-modal::-webkit-scrollbar{width:4px}
+.demo-modal::-webkit-scrollbar-thumb{background:#e5e7eb;border-radius:2px}
+.demo-close{position:absolute;top:16px;right:18px;background:none;border:none;font-size:1.3rem;color:#9ca3af;cursor:pointer;line-height:1;padding:4px}
+.demo-close:hover{color:#374151}
+.demo-head{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.demo-head-icon{width:44px;height:44px;background:#eef2ff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.demo-head h2{font-family:var(--sans);font-size:1.3rem;font-weight:700;color:#111827;line-height:1.3}
+.demo-form{display:flex;flex-direction:column;gap:12px}
+.demo-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.demo-input{width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:10px;font-family:var(--sans);font-size:.875rem;color:#111827;outline:none;transition:border-color .15s;background:#fff}
+.demo-input:focus{border-color:var(--teal)}
+.demo-input::placeholder{color:#9ca3af}
+.demo-phone-row{display:grid;grid-template-columns:160px 1fr;gap:12px}
+.demo-select{width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:10px;font-family:var(--sans);font-size:.875rem;color:#111827;outline:none;background:#fff;cursor:pointer;transition:border-color .15s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.demo-select:focus{border-color:var(--teal)}
+.demo-submit{width:100%;padding:14px;background:var(--teal);color:#fff;border:none;border-radius:10px;font-family:var(--sans);font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:4px}
+.demo-submit:hover{background:var(--teal2);transform:translateY(-1px)}
+.demo-note{text-align:center;font-size:.75rem;color:#9ca3af;margin-top:8px}
+.demo-success{display:none;text-align:center;padding:20px 0}
+.demo-success h3{font-size:1.1rem;font-weight:700;color:#111827;margin-bottom:8px}
+.demo-success p{font-size:.875rem;color:#6b7280;line-height:1.6}
+@media(max-width:480px){
+  .demo-row,.demo-phone-row{grid-template-columns:1fr}
+  .demo-modal{padding:24px 20px}
+}
+</style>
+
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="index_fr.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <img src="https://aiydou.com/logo.png" alt="AIYDOU" style="height:40px;" onerror="this.style.display='none'">
+      <div>
+        <div style="font-weight:800;font-size:1.1rem;color:var(--white);letter-spacing:-0.5px;">AIYDOU</div>
+        <div style="font-size:0.7rem;color:var(--light);">AI that helps you Do</div>
+      </div>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index_fr.html#services" data-i18n="nav.solutions">Solutions</a></li>
+    <li><a href="index_fr.html#usecases" data-i18n="nav.usecases">Use cases</a></li>
+    <li><a href="#programmes" data-i18n="nav.formation">Formation</a></li>
+    <li><a href="index_fr.html#pricing" data-i18n="nav.pricing">Pricing</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+    <span style="color:var(--border);margin:0 2px;">|</span>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="btn-nav" onclick="openFormationModal()" data-i18n="nav.cta">Réserver une session</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="padding:52px 0 40px;background:var(--bg2);">
+  <div class="container">
+    <div class="sh reveal">
+      <div class="section-label" data-i18n="form.lbl">// Formation IA</div>
+      <h1 style="font-size:clamp(2rem,5vw,3.6rem);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin:16px 0 20px;">
+        <span data-i18n="form.hero.h1.1">Maîtrisez l'IA RH.</span><br>
+        <span class="t" data-i18n="form.hero.h1.2">Formez vos équipes en 2 jours.</span>
+      </h1>
+      <p class="hero-sub" style="max-width:580px;" data-i18n="form.hero.sub">Des formations conçues par un expert RH & IA avec 17 ans d'expérience. Pas de théorie creuse — des compétences opérationnelles dès le premier jour.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;">
+        <button class="btn-primary" onclick="openFormationModal()" data-i18n="form.cta1">Réserver une session →</button>
+        <button class="btn-outline" onclick="document.getElementById('programmes').scrollIntoView({behavior:'smooth'})">Voir les programmes</button>
+      </div>
+      <div style="margin-top:16px;display:flex;gap:20px;flex-wrap:wrap;font-size:0.82rem;color:var(--muted);">
+        <span>✓ Éligible OPCO</span>
+        <span>✓ Certification incluse</span>
+        <span>✓ Présentiel ou distanciel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding:24px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg1);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center;">
+      <div style="padding:0 20px;border-right:1px solid var(--border);">
+        <div style="font-size:2.4rem;font-weight:800;color:var(--teal);letter-spacing:-1px;">+200</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:4px;" data-i18n="form.stat1">RH formés</div>
+      </div>
+      <div style="padding:0 20px;border-right:1px solid var(--border);">
+        <div style="font-size:2.4rem;font-weight:800;color:var(--teal);letter-spacing:-1px;">96%</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:4px;" data-i18n="form.stat2">de satisfaction</div>
+      </div>
+      <div style="padding:0 20px;border-right:1px solid var(--border);">
+        <div style="font-size:2.4rem;font-weight:800;color:var(--teal);letter-spacing:-1px;">2 jours</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:4px;" data-i18n="form.stat3">pour être opérationnel</div>
+      </div>
+      <div style="padding:0 20px;">
+        <div style="font-size:2.4rem;font-weight:800;color:var(--teal);letter-spacing:-1px;">100%</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:4px;" data-i18n="form.stat4">finançable OPCO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATEUR -->
+<section style="padding:40px 0;background:var(--bg1);">
+  <div class="container">
+    <div class="reveal" style="max-width:760px;margin:0 auto;background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:32px 36px;display:flex;gap:28px;align-items:flex-start;">
+      <div style="font-size:3.5rem;flex-shrink:0;">👨‍🏫</div>
+      <div>
+        <div class="section-label" style="margin-bottom:8px;">// Votre formateur</div>
+        <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:12px;" data-i18n="form.trainer.h">Expert RH & IA · 17 ans d'expérience</h2>
+        <p style="font-size:0.92rem;color:var(--gray);line-height:1.7;" data-i18n="form.trainer.p">Ancien DRH et praticien de l'intelligence artificielle appliquée aux ressources humaines. Pas de théorie creuse : des méthodes issues du terrain, testées dans des organisations de toutes tailles, en France et en Afrique. Une approche qui combine la maîtrise des enjeux humains et la réalité technologique des agents IA en production.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:0.82rem;">
+          <span style="background:var(--bg1);border:1px solid var(--border);border-radius:100px;padding:4px 12px;">🏢 Ancien DRH</span>
+          <span style="background:var(--bg1);border:1px solid var(--border);border-radius:100px;padding:4px 12px;">🤖 Expert IA appliquée</span>
+          <span style="background:var(--bg1);border:1px solid var(--border);border-radius:100px;padding:4px 12px;">🌍 France & Afrique</span>
+          <span style="background:var(--bg1);border:1px solid var(--border);border-radius:100px;padding:4px 12px;">📋 17 ans d'expérience RH</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMMES -->
+<section id="programmes" style="padding:48px 0;background:var(--bg1);">
+  <div class="container">
+    <div class="sh c reveal">
+      <div class="section-label" data-i18n="form.prog.lbl">// Nos programmes</div>
+      <h2 data-i18n="form.prog.h2">3 formats adaptés à votre organisation</h2>
+      <p class="section-sub" data-i18n="form.prog.sub">Du workshop intensif au coaching sur la durée — choisissez le format qui correspond à votre rythme et vos objectifs.</p>
+    </div>
+
+    <div class="prc-grid reveal" style="margin-top:32px;">
+
+      <div class="plan">
+        <div style="font-size:2.4rem;margin-bottom:14px;">🎓</div>
+        <div class="pname" data-i18n="form.f1.title">Workshop Intensif</div>
+        <div class="ptgt" data-i18n="form.f1.sub">Présentiel ou distanciel · 2 jours</div>
+        <div class="pprice-setup">1 900€</div>
+        <div class="pprice-recur">par session · jusqu'à 12 participants</div>
+        <hr class="pdiv">
+        <div class="tier-block">
+          <span class="tier-lbl">Jour 1 — Comprendre</span>
+          <ul class="pfeats">
+            <li>L'IA et les agents RH — comment ça marche vraiment</li>
+            <li>Les cas d'usage prioritaires dans votre organisation</li>
+            <li>Comprendre les forces et les limites d'un agent</li>
+          </ul>
+        </div>
+        <div class="tier-block">
+          <span class="tier-lbl">Jour 2 — Pratiquer</span>
+          <ul class="pfeats">
+            <li>Configurer et tester un agent sur vos processus réels</li>
+            <li>Superviser, corriger et améliorer un agent</li>
+            <li>Plan d'action personnalisé post-formation</li>
+          </ul>
+        </div>
+        <ul class="pfeats ops" style="margin-top:12px;">
+          <li>✅ Certification AIYDOU incluse</li>
+          <li>✅ Support 30 jours post-formation</li>
+        </ul>
+        <button class="pbtn" onclick="openFormationModal()">Réserver une session →</button>
+      </div>
+
+      <div class="plan feat" data-label-fr="Populaire" data-label-en="Popular">
+        <div style="font-size:2.4rem;margin-bottom:14px;">📚</div>
+        <div class="pname" data-i18n="form.f2.title">Programme E-learning</div>
+        <div class="ptgt">À votre rythme · accès 12 mois</div>
+        <div class="pprice-setup">490€</div>
+        <div class="pprice-recur">par collaborateur / an</div>
+        <hr class="pdiv">
+        <div class="tier-block">
+          <span class="tier-lbl">6 modules vidéo</span>
+          <ul class="pfeats">
+            <li>Module 1 — L'IA en RH : fondamentaux</li>
+            <li>Module 2 — Onboarding automatisé</li>
+            <li>Module 3 — Gestion des congés par IA</li>
+            <li>Module 4 — Performance & feedback IA</li>
+            <li>Module 5 — Superviser et corriger un agent</li>
+            <li>Module 6 — Mesurer le ROI de vos agents</li>
+          </ul>
+        </div>
+        <ul class="pfeats ops" style="margin-top:12px;">
+          <li>✅ Mises à jour incluses 12 mois</li>
+          <li>✅ Tableau de bord progression équipe</li>
+          <li>✅ Certification à chaque module</li>
+        </ul>
+        <button class="pbtn" onclick="openFormationModal()">Démarrer l'accès →</button>
+      </div>
+
+      <div class="plan">
+        <div style="font-size:2.4rem;margin-bottom:14px;">🔄</div>
+        <div class="pname" data-i18n="form.f3.title">Coaching Mensuel</div>
+        <div class="ptgt">Accompagnement continu · post-déploiement</div>
+        <div class="pprice-setup">390€</div>
+        <div class="pprice-recur">par mois · sans engagement</div>
+        <hr class="pdiv">
+        <div class="tier-block">
+          <span class="tier-lbl">Chaque mois</span>
+          <ul class="pfeats">
+            <li>2 sessions live (1h chacune)</li>
+            <li>Réponses illimitées par messagerie</li>
+            <li>Revue des performances de vos agents</li>
+            <li>Optimisations recommandées chaque mois</li>
+            <li>Veille réglementaire RH × IA</li>
+          </ul>
+        </div>
+        <ul class="pfeats ops" style="margin-top:12px;">
+          <li>✅ Sans engagement · résiliable à tout moment</li>
+          <li>✅ Idéal post-déploiement AIYDOU</li>
+        </ul>
+        <button class="pbtn" onclick="openFormationModal()">Parler à un formateur →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section style="padding:48px 0;background:var(--bg2);">
+  <div class="container">
+    <div class="sh c reveal">
+      <div class="section-label">// Pour qui ?</div>
+      <h2>Conçu pour les équipes RH qui veulent prendre le contrôle de l'IA</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px;" class="reveal">
+      <div style="background:var(--bg1);border:1px solid var(--border);border-radius:12px;padding:24px;">
+        <div style="font-size:1.8rem;margin-bottom:12px;">👔</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">DRH & VP People</h3>
+        <p style="font-size:0.88rem;color:var(--muted);line-height:1.6;">Comprendre l'IA pour piloter la transformation RH et défendre les investissements auprès du COMEX.</p>
+      </div>
+      <div style="background:var(--bg1);border:1px solid var(--border);border-radius:12px;padding:24px;">
+        <div style="font-size:1.8rem;margin-bottom:12px;">⚙️</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">Responsables RH opérationnels</h3>
+        <p style="font-size:0.88rem;color:var(--muted);line-height:1.6;">Maîtriser les outils IA au quotidien, superviser les agents et gagner en autonomie.</p>
+      </div>
+      <div style="background:var(--bg1);border:1px solid var(--border);border-radius:12px;padding:24px;">
+        <div style="font-size:1.8rem;margin-bottom:12px;">🎯</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">Chargés RH & Assistants</h3>
+        <p style="font-size:0.88rem;color:var(--muted);line-height:1.6;">Utiliser l'IA comme assistant personnel pour gagner du temps sur les tâches répétitives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGE -->
+<section style="padding:32px 0 40px;background:var(--bg1);">
+  <div class="container">
+    <div style="max-width:700px;margin:0 auto;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;opacity:0.3;">"</div>
+      <p style="font-size:1.15rem;line-height:1.7;font-style:italic;color:var(--white);">"Avant la formation, j'avais peur que l'IA remplace mon équipe. Après 2 jours avec AIYDOU, on sait exactement comment l'utiliser pour travailler mieux — pas moins. C'est un changement de mentalité complet."</p>
+      <div style="margin-top:24px;">
+        <div style="font-weight:700;font-size:0.95rem;">— Fatou Diallo, DRH · Groupe Bolloré Africa Logistics</div>
+        <div style="font-size:0.82rem;color:var(--muted);margin-top:4px;">→ 3 agents RH déployés 4 semaines après la formation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="padding:56px 0;background:#0f172a;">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:16px;">Votre équipe RH mérite<br>de maîtriser l'IA.</h2>
+    <p style="color:rgba(255,255,255,0.6);font-size:1rem;margin-bottom:32px;max-width:460px;margin-left:auto;margin-right:auto;">Réservez un appel de 20 minutes pour choisir le programme adapté à votre organisation.</p>
+    <button class="btn-primary" onclick="openFormationModal()" style="font-size:1rem;padding:14px 32px;">Choisir mon programme →</button>
+    <div style="margin-top:14px;font-size:0.8rem;color:rgba(255,255,255,0.35);">Sans engagement · Réponse sous 24h · Financement OPCO pris en charge</div>
+    <div style="margin-top:28px;">
+      <a href="index_fr.html" style="color:rgba(255,255,255,0.4);font-size:0.85rem;text-decoration:none;">← Retour à l'accueil AIYDOU</a>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATION MODAL -->
+<div class="demo-overlay" id="formationOverlay" onclick="if(event.target===this)closeFormationModal()" style="display:none;">
+  <div class="demo-modal">
+    <button class="demo-close" onclick="closeFormationModal()" aria-label="Close">✕</button>
+    <div class="demo-head">
+      <div class="demo-head-icon">🎓</div>
+      <h2 id="fm-title">Réserver votre programme de formation</h2>
+    </div>
+    <div style="background:var(--bg2);border-radius:10px;padding:14px 16px;margin-bottom:18px;border-left:3px solid var(--teal);font-size:0.84rem;color:var(--gray);line-height:1.6;">
+      <strong>👨‍🏫 Expert RH & IA · 17 ans d'expérience</strong><br>
+      Ancien DRH, praticien de l'IA appliquée aux RH. Méthodes issues du terrain, testées dans des organisations de toutes tailles.
+    </div>
+    <div class="demo-form" id="formationForm">
+      <div class="demo-row">
+        <input class="demo-input" type="text" id="fm-fname" placeholder="Prénom *" required/>
+        <input class="demo-input" type="text" id="fm-lname" placeholder="Nom *"/>
+      </div>
+      <input class="demo-input" type="email" id="fm-email" placeholder="Email professionnel *" required/>
+      <input class="demo-input" type="text" id="fm-job" placeholder="Titre du poste"/>
+      <input class="demo-input" type="text" id="fm-company" placeholder="Nom de l'entreprise"/>
+      <select class="demo-select" id="fm-format">
+        <option value="" disabled selected>Quel programme vous intéresse ?</option>
+        <option>🎓 Workshop Intensif — 2 jours (1 900€)</option>
+        <option>📚 Programme E-learning — 6 modules (490€/pers)</option>
+        <option>🔄 Coaching Mensuel (390€/mois)</option>
+        <option>Je veux être conseillé(e)</option>
+      </select>
+      <select class="demo-select" id="fm-size">
+        <option value="" disabled selected>Taille de votre équipe RH</option>
+        <option>1–5 personnes</option>
+        <option>5–15 personnes</option>
+        <option>15–50 personnes</option>
+        <option>50+ personnes</option>
+      </select>
+      <button class="demo-submit" onclick="submitFormation()">Réserver ma formation →</button>
+      <div class="demo-note">Sans engagement · Réponse sous 24h · Financement OPCO possible</div>
+    </div>
+    <div class="demo-success" id="formationSuccess" style="display:none;">
+      <div style="font-size:3rem;margin-bottom:12px">🎉</div>
+      <h3>Demande reçue !</h3>
+      <p>Notre expert vous contactera sous 24h pour finaliser votre programme et étudier les options de financement OPCO.</p>
+    </div>
+  </div>
+</div>
+
+</footer>
+
+<script>
+const T = {
+fr: {
+  "nav.problem":"Problème","nav.platforms":"Plateformes","nav.solutions":"Solutions","nav.services":"Services",
+  "nav.usecases":"Use cases","nav.formation":"Formation","nav.results":"Résultats","nav.pricing":"Pricing","nav.cta":"Demander une démo",
+  
+  "hero.line1":"Automatisez vos RH avec l'IA que vous <span class='t'>utilisez déjà</span>",
+  "hero.sub":"Réduisez de 60% les tâches RH manuelles. Premier agent RH opérationnel en 6 semaines.",
+  "hero.cta1":"Démo gratuite 30 min →","hero.cta2":"Voir nos solutions",
+  "hero.s1v":"−60%","hero.s1l":"tâches RH manuelles",
+  "hero.s2v":"×3.2","hero.s2l":"ROI en 12 mois",
+  "hero.s3v":"6 sem.","hero.s3l":"premier agent opérationnel",
+  "term.l1":"// DRH Nexora",
+  "term.m1":"Analyse les candidatures reçues cette semaine et identifie les 5 meilleurs profils pour le poste de Data Engineer.",
+  "term.m2":"Analyse de 47 candidatures en cours…",
+  "term.c1":"47 CV analysés","term.c2":"12 pré-qualifiés","term.c3":"5 finalistes",
+  "term.l3":"// Résultats",
+  "term.m3":"Top 5 identifiés. Score moyen : 87/100. Entretiens planifiés automatiquement pour mardi. Rapport détaillé disponible.",
+  "term.l4":"// DRH Nexora",
+  "term.m4":"Parfait. Envoie les invitations et prépare les grilles d'entretien personnalisées.",
+  "term.l5":"// Confirmé",
+  "term.m5":"5 invitations envoyées. Grilles générées selon le profil de chaque candidat. Durée totale du processus : 4 minutes.",
+  "ont.lbl1":"// DRH Nexora","ont.lbl2":"// Agent Onboarding v3.1","ont.lbl3":"// Accès provisionnés","ont.lbl4":"// Confirmé",
+  "ont.m1":"Prépare l'intégration de Lucas Durand, Data Engineer. Arrivée lundi. Accès Slack, GitHub, Notion.",
+  "ont.c1":"Slack ✓","ont.c2":"GitHub ✓","ont.c3":"Notion ✓",
+  "ont.m2":"Parcours J1–J90 généré. 12 modules. 5 meetings planifiés.",
+  "ont.m3":"Envoie le kit de bienvenue et bloque le 1:1 avec Sarah lundi 10h.",
+  "ont.m4":"Kit envoyé. Agenda synchronisé. Lucas est prêt. Durée : 3 min.","p.lbl":"// Le problème","p.h2":"Les RH perdent 80% de leur temps<br>sur des tâches automatisables","p.sub":"Les équipes RH ont une valeur stratégique immense. Pourtant elles passent l'essentiel de leur journée sur de l'administration répétitive.",
+  "p.c1h":"Productivité perdue","p.c1p":"Onboarding manuel, congés, performance, paie — des heures entières chaque jour sur des tâches entièrement automatisables.","p.c1s":"de productivité RH perdue chaque année",
+  "p.c2h":"Erreurs évitables","p.c2p":"Les process manuels génèrent inévitablement des erreurs de paie, des non-conformités RGPD et des retards coûteux.","p.c2s":"des erreurs RH liées aux process manuels",
+  "p.c3h":"Impact possible","p.c3p":"En libérant vos équipes RH du répétitif, elles se concentrent sur la stratégie, la culture et le développement des talents.","p.c3s":"l'impact stratégique possible avec l'IA",
+  "pl.lbl":"// Compatibilité plateforme","pl.h2":"Construit sur l'IA que vous utilisez déjà","pl.sub":"Pas de nouvelle licence. Pas de migration. Vos agents RH sont créés dans votre écosystème existant.",
+  "pl.ct":"💡 L'avantage décisif","pl.cb":"Vos équipes utilisent déjà ces outils. En construisant les agents dans leur environnement familier, l'adoption est immédiate et vous capitalisez sur des licences déjà payées.",
+  "pl.gn":"Google Gemini","pl.gd":"Pour les entreprises sous Google Workspace. Agents natifs dans Gmail, Meet, Drive et Google Chat.",
+  "pl.gf1":"Gmail — traitement automatique des candidatures","pl.gf2":"Meet — résumés d'entretiens automatiques","pl.gf3":"Drive — gestion documentaire RH intelligente","pl.gf4":"Google Chat — chatbot RH 24/7",
+  "pl.mn":"Microsoft Copilot","pl.md":"Pour les entreprises sous Microsoft 365. Agents dans Teams, Outlook et SharePoint.",
+  "pl.mf1":"Teams — bot RH dans vos canaux existants","pl.mf2":"Outlook — automatisation des emails RH","pl.mf3":"SharePoint — base documentaire intelligente","pl.mf4":"Power Automate — workflows no-code",
+  "pl.cn":"Claude · Universel","pl.cs":"Toutes plateformes","pl.cd":"Pour les entreprises multi-cloud. S'intègre partout — Google, Microsoft, Slack, Notion, Salesforce.",
+  "pl.cf1":"Google + Microsoft simultanément","pl.cf2":"Slack — agent RH dans vos workspaces","pl.cf3":"Notion / Confluence — knowledge base IA","pl.cf4":"API custom — intégration tout SIRH",
+  "compat.lbl":"// Aussi compatible avec","compat.more":"+ 40 autres",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "svc.lbl":"// Nos services","svc.h2":"De l'audit au déploiement — en 6 semaines","svc.sub":"Un partenaire unique qui connaît les RH de l'intérieur et maîtrise l'IA en production. Pas l'un ou l'autre.",
+  "svc.s1h":"Audit & Stratégie IA","svc.s1p":"Analyse de vos processus RH, identification des opportunités et feuille de route avec estimation du ROI.","svc.s1t1":"Diagnostic","svc.s1t2":"Roadmap","svc.s1t3":"Quick wins",
+  "svc.s2h":"Conception d'Agents IA","svc.s2p":"Développement d'agents sur mesure : recrutement, onboarding, performance, formation et gestion des talents.","svc.s2t1":"LLM sur mesure","svc.s2t2":"Workflows IA","svc.s2t3":"RAG RH",
+  "svc.s3h":"Intégration & Déploiement","svc.s3p":"Connexion à vos SIRH, déploiement cloud sécurisé, tests et mise en production accompagnée.","svc.s3t1":"API SIRH","svc.s3t2":"RGPD","svc.s3t3":"Cloud sécurisé",
+  "svc.s4h":"Formation & Accompagnement","svc.s4p":"Conduite du changement, formation équipes RH, support dédié et amélioration continue des modèles.","svc.s4t1":"Change mgmt","svc.s4t2":"Formation","svc.s4t3":"Support",
+  "uc.lbl":"// Cas d'usage","uc.h2":"Un agent pour chaque moment critique du parcours RH","uc.sub":"Des workflows pré-configurés sur les tâches les plus chronophages. Actifs en quelques clics — sans développeur.",
+  "uc.u1h":"Agent Recrutement","uc.u1f1":"Tri & scoring automatique des CV","uc.u1f2":"Pré-qualification par chatbot","uc.u1f3":"Planification des entretiens","uc.u1f4":"Rédaction des offres d'emploi","uc.u1f5":"Rapport candidat objectif",
+  "uc.u2h":"Agent Onboarding","uc.u2f1":"Parcours d'intégration J1 auto","uc.u2f2":"Formation interactive IA","uc.u2f3":"Suivi 30 / 60 / 90 jours","uc.u2f4":"Admin documentaire automatisée","uc.u2f5":"Feedback continu newjoiner",
+  "uc.u3h":"Agent Performance","uc.u3f1":"OKRs automatisés & suivis","uc.u3f2":"Feedback 360° IA-assisté","uc.u3f3":"Détection risque de départ","uc.u3f4":"Plan de développement auto","uc.u3f5":"Rapport analytique DRH",
+  "uc.u4h":"Chatbot RH 24/7","uc.u4f1":"FAQ salariés en temps réel","uc.u4f2":"Demandes de congés auto","uc.u4f3":"Bulletins de paie à la demande","uc.u4f4":"Conformité réglementaire","uc.u4f5":"Support en 12 langues",
+  "uc.tryfree":"Essayer gratuitement →","uc.trydemo":"Demander une démo →",
+  "r.lbl":"// Résultats","r.h2":"Ce que nos clients ont mesuré",
+  "r.s1l":"Temps de recrutement","r.s1s":"de 45 jours à 12 jours","r.s2l":"Satisfaction employés","r.s2s":"vs 67% avant le déploiement","r.s3l":"Productivité RH","r.s3s":"sur les tâches administratives","r.s4l":"Turnover non désiré","r.s4s":"grâce à l'analyse prédictive",
+  "r.quote":"\"AIYDOU a transformé notre département RH. En 3 mois, notre équipe s'est libérée de 70% des tâches répétitives et peut enfin se concentrer sur ce qui compte vraiment : nos collaborateurs.\"",
+  "r.author":"— Marie-Sophie Dubois, DRH · Groupe Nexora, 2 800 collaborateurs",
+  "m.lbl":"// Notre méthode","m.h2":"Opérationnel en 10 semaines","m.sub":"Une méthodologie éprouvée qui minimise le risque et maximise le ROI dès les premières semaines.",
+  "m.p1t":"Découverte","m.p1w":"Semaines 1–2","m.p1d":"Audit RH complet, cartographie des processus et identification des quick wins.",
+  "m.p2t":"Conception","m.p2w":"Semaines 3–5","m.p2d":"Architecture des agents, maquettes et prototypes validés avec vos équipes RH.",
+  "m.p3t":"Déploiement","m.p3w":"Semaines 6–10","m.p3d":"Développement, intégration SIRH, tests et mise en production accompagnée.",
+  "m.p4t":"Optimisation","m.p4w":"Continu","m.p4d":"Suivi KPIs, amélioration continue des modèles et accompagnement mensuel.",
+  "w.lbl":"// Pourquoi AIYDOU","w.h2":"Spécialistes RH et IA — pas l'un ou l'autre","w.sub":"La plupart des prestataires IA ne connaissent pas les RH. La plupart des cabinets RH ne maîtrisent pas l'IA. Nous, si.",
+  "w.w1h":"Experts RH × IA","w.w1p":"Équipe hybride unique : DRH expérimentés et ingénieurs IA de pointe.","w.w2h":"Données sécurisées","w.w2p":"Hébergement souverain européen, RGPD garanti, aucune donnée partagée avec des tiers.",
+  "w.w3h":"ROI en 3 mois","w.w3p":"Premier agent opérationnel en 6 semaines. ROI mesurable dès le 3e mois.","w.w4h":"Zero vendor lock-in","w.w4p":"Construit sur votre plateforme existante. Vous gardez le contrôle total.",
+  "w.w5h":"Accompagnement continu","w.w5p":"CSM dédié, revues mensuelles, optimisation et formation équipes inclus.","w.w6h":"Multilingue & international","w.w6p":"Agents en 12 langues, conformité locale, déploiement multi-pays centralisé.",
+  "form.lbl":"// Formation IA","form.h2":"Vos équipes RH, formées à l'IA en 2 jours","form.sub":"Pas juste l'outil — la compétence. On forme vos équipes RH à utiliser, superviser et optimiser leurs agents IA durablement.",
+  "form.f1.title":"Workshop Intensif","form.f1.sub":"Présentiel ou distanciel · 2 jours","form.f1.price":"1 900€","form.f1.per":"par session · jusqu'à 12 participants",
+  "form.f1.l1":"Comprendre l'IA et les agents RH","form.f1.l2":"Superviser et corriger un agent","form.f1.l3":"Cas pratiques sur vos propres processus","form.f1.l4":"Certification AIYDOU incluse",
+  "form.f2.title":"Programme E-learning","form.f2.sub":"À votre rythme · accès 12 mois","form.f2.price":"490€","form.f2.per":"par collaborateur / an",
+  "form.f2.l1":"6 modules vidéo RH × IA","form.f2.l2":"Exercices pratiques guidés","form.f2.l3":"Mises à jour incluses (nouvelles lois, nouveaux LLM)","form.f2.l4":"Tableau de bord progression équipe",
+  "form.f3.title":"Coaching Mensuel","form.f3.sub":"Accompagnement continu · post-déploiement","form.f3.price":"390€","form.f3.per":"par mois · sans engagement",
+  "form.f3.l1":"2 sessions live par mois (1h chacune)","form.f3.l2":"Réponses illimitées par messagerie","form.f3.l3":"Revue des performances de vos agents","form.f3.l4":"Optimisations recommandées chaque mois",
+  "form.cta1":"Réserver une session →","form.cta2":"Parler à un formateur →",
+  "form.note":"Formation éligible OPCO · Prise en charge possible jusqu'à 100%","form.link":"Voir le programme complet →",
+  "pr.lbl":"// Offres","pr.sub":"Pas de frais cachés. Pas de surprise. L'abonnement mensuel couvre le <strong>Prompt Ops</strong> — la maintenance active de vos agents pour qu'ils restent performants.",
+  "pr.why.lbl":"// Pourquoi un abonnement mensuel ?","pr.why.h":"Un agent RH n'est pas un logiciel qu'on installe une fois","pr.why.p":"Vos instructions évoluent avec votre entreprise : nouvelle législation, changement de SIRH, politique interne révisée, mise à jour du modèle LLM. Sans maintenance, un agent dérive et produit des réponses incorrectes.",
+  "pr.ops.title":"⚙ Le Prompt Ops AIYDOU","pr.ops.p":"Nous maintenons les instructions de vos agents à jour en continu — révisions de prompts, compatibilité LLM garantie sur chaque nouvelle version (Gemini, Copilot, Claude), veille réglementaire RH, et monitoring comportemental pour détecter les dérives avant vos équipes.",
+  "pr.tier.deploy":"Déploiement inclus","pr.tier.ops":"Prompt Ops mensuel",
+  "pr.s":"Starter","pr.st":"PME · jusqu'à 200 salariés","pr.price":"3 900€","pr.sp":"one-shot déploiement · puis <strong>290€/mois</strong>",
+  "pr.sf1":"1 Agent Onboarding IA","pr.sf2":"Connexion outils existants (Drive, SharePoint, etc)","pr.sf3":"Formation équipe (1 jour)",
+  "pr.audit":"✅ Audit RH offert inclus","pr.sop1":"1 révision de prompt/mois","pr.sop2":"Compatibilité LLM garantie","pr.sop3":"Monitoring comportemental","pr.sop4":"Support ticket 48h",
+  "pr.b":"Business","pr.bt":"ETI · 200 à 2 000 salariés","pr.bprice":"7 900€","pr.bp":"one-shot déploiement · puis <strong>690€/mois</strong>",
+  "pr.bf1":"3 Agents IA personnalisés","pr.bf2":"Connexion jusqu'à 3 sources de données internes","pr.bf3":"Formation complète équipes",
+  "pr.bop1":"4 révisions prompt/mois (1 par agent)","pr.bop2":"Veille réglementaire RH incluse","pr.bop3":"A/B testing des instructions","pr.bop4":"Revue mensuelle CSM · 30 min","pr.bop5":"Support prioritaire 4h (Slack/Teams)",
+  "pr.e":"Enterprise","pr.et":"Grands groupes · 2 000+ salariés","pr.eprice":"Sur devis","pr.erecur":"à partir de <strong>1 200€/mois</strong>",
+  "pr.ef1":"Agents IA illimités","pr.ef2":"Architecture sur mesure","pr.ef3":"Intégrations sur mesure",
+  "pr.eop1":"Révisions illimitées","pr.eop2":"Ingénieur Prompt Ops dédié","pr.eop3":"Changelog versionné des instructions","pr.eop4":"SLA comportemental garanti","pr.eop5":"Hébergement on-premise possible",
+  "pr.btn1":"Réserver mon audit gratuit →","pr.btn2":"Parler à l'équipe →",
+  "cta.lbl":"// Passez à l'action","cta.h2":"Vos RH méritent mieux que des tableurs.",
+  "cta.sub":"Réservez un audit gratuit de 30 minutes. On identifie ensemble ce qu'on peut automatiser pour vous — et on vous dit combien ça vous fait gagner.",
+  "cta.btn1":"Réserver mon audit gratuit →","cta.btn2":"Voir les cas clients","cta.note":"Sans engagement · Sans carte bancaire · Réponse sous 24h",
+  "f.about":"À propos","f.blog":"Blog","f.legal":"Mentions légales","f.privacy":"Confidentialité","f.contact":"Contact","f.copy":"© 2025 AIYDOU · connect@aiydou.com"
+},
+en: {
+  "nav.problem":"Problem","nav.platforms":"Platforms","nav.solutions":"Solutions","nav.services":"Services",
+  "nav.usecases":"Use Cases","nav.formation":"Training","nav.results":"Results","nav.pricing":"Pricing","nav.about":"About us","nav.cta":"Book a Demo",
+  
+  "hero.line1":"Automate your HR with the AI you <span class='t'>already have</span>",
+  "hero.sub":"Cut manual HR tasks by 60%. First HR agent live in 6 weeks.",
+  "hero.cta1":"Free 30-min Demo →","hero.cta2":"Explore Solutions",
+  "hero.s1v":"−60%","hero.s1l":"manual HR tasks",
+  "hero.s2v":"×3.2","hero.s2l":"ROI in 12 months",
+  "hero.s3v":"6 wks","hero.s3l":"first agent live",
+  "term.l1":"// DRH Nexora",
+  "term.m1":"Analyse the applications received this week and identify the 5 best profiles for the Data Engineer position.",
+  "term.m2":"Analysing 47 applications…",
+  "term.c1":"47 CVs processed","term.c2":"12 pre-qualified","term.c3":"5 finalists",
+  "term.l3":"// Results",
+  "term.m3":"Top 5 identified. Average score: 87/100. Interviews automatically scheduled for Tuesday. Detailed report available.",
+  "term.l4":"// DRH Nexora",
+  "term.m4":"Perfect. Send the invitations and prepare personalised interview grids.",
+  "term.l5":"// Confirmed",
+  "term.m5":"5 invitations sent. Grids generated based on each candidate's profile. Total process time: 4 minutes.",
+  "ont.lbl1":"// HR Manager","ont.lbl2":"// Onboarding Agent v3.1","ont.lbl3":"// Access provisioned","ont.lbl4":"// Confirmed",
+  "ont.m1":"Prepare onboarding for Lucas Durand, Data Engineer. Start Monday. Access: Slack, GitHub, Notion.",
+  "ont.c1":"Slack ✓","ont.c2":"GitHub ✓","ont.c3":"Notion ✓",
+  "ont.m2":"J1–J90 journey created. 12 modules. 5 meetings scheduled.",
+  "ont.m3":"Send the welcome kit and block the 1:1 with Sarah Monday 10am.",
+  "ont.m4":"Kit sent. Calendar synced. Lucas is ready. Duration: 3 min.","p.lbl":"// The Problem","p.h2":"HR teams spend 80% of their time<br>on automatable tasks","p.sub":"HR professionals have immense strategic value. Yet they spend most of their day on repetitive administration.",
+  "p.c1h":"Lost productivity","p.c1p":"Manual onboarding, leave, performance, payroll — hours every day on fully automatable work.","p.c1s":"of HR productivity lost every year on average",
+  "p.c2h":"Avoidable errors","p.c2p":"Manual processes inevitably generate payroll errors, GDPR non-compliance and costly delays that expose the company.","p.c2s":"of HR errors linked to manual processes",
+  "p.c3h":"Possible impact","p.c3p":"By freeing HR teams from repetitive work, they can focus on strategy, culture and talent development.","p.c3s":"the strategic impact possible with AI",
+  "pl.lbl":"// Platform Compatibility","pl.h2":"Built on the AI you already use","pl.sub":"No new licence. No migration. Your HR agents are built inside your existing ecosystem.",
+  "pl.ct":"💡 The decisive advantage","pl.cb":"Your teams already use these tools every day. Building agents in their familiar environment means immediate adoption — and you leverage licences you're already paying for.",
+  "pl.gn":"Google Gemini","pl.gd":"For companies on Google Workspace. Agents native in Gmail, Meet, Drive and Google Chat.",
+  "pl.gf1":"Gmail — automatic application processing","pl.gf2":"Meet — automatic interview summaries","pl.gf3":"Drive — intelligent HR document management","pl.gf4":"Google Chat — 24/7 HR chatbot",
+  "pl.mn":"Microsoft Copilot","pl.md":"For companies on Microsoft 365. Agents in Teams, Outlook and SharePoint.",
+  "pl.mf1":"Teams — HR bot in your existing channels","pl.mf2":"Outlook — HR email automation","pl.mf3":"SharePoint — intelligent document base","pl.mf4":"Power Automate — no-code workflows",
+  "pl.cn":"Claude · Universal","pl.cs":"All platforms","pl.cd":"For multi-cloud companies. Integrates everywhere — Google, Microsoft, Slack, Notion, Salesforce.",
+  "pl.cf1":"Google + Microsoft simultaneously","pl.cf2":"Slack — HR agent in your workspaces","pl.cf3":"Notion / Confluence — AI knowledge base","pl.cf4":"Custom API — any HRIS integration",
+  "compat.lbl":"// Also compatible with","compat.more":"+ 40 more",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "svc.lbl":"// Our Services","svc.h2":"From audit to deployment — in 6 weeks","svc.sub":"A unique partner who knows HR from the inside and masters AI in production. Not one or the other.",
+  "svc.s1h":"AI Audit & Strategy","svc.s1p":"Analysis of your HR processes, automation opportunities and a roadmap with ROI estimation.","svc.s1t1":"Diagnosis","svc.s1t2":"Roadmap","svc.s1t3":"Quick wins",
+  "svc.s2h":"AI Agent Design","svc.s2p":"Custom agent development: recruitment, onboarding, performance, training and talent management.","svc.s2t1":"Custom LLM","svc.s2t2":"AI Workflows","svc.s2t3":"HR RAG",
+  "svc.s3h":"Integration & Deployment","svc.s3p":"Connection to your HRIS, secure cloud deployment, user testing and go-live support.","svc.s3t1":"HRIS API","svc.s3t2":"GDPR","svc.s3t3":"Secure cloud",
+  "svc.s4h":"Training & Support","svc.s4p":"Change management, HR team training, dedicated support and continuous model improvement.","svc.s4t1":"Change mgmt","svc.s4t2":"Training","svc.s4t3":"Support",
+  "uc.lbl":"// Use Cases","uc.h2":"An agent for every critical HR moment","uc.sub":"Pre-configured workflows for your most time-consuming tasks. Live in a few clicks — no developer needed.",
+  "uc.u1h":"Recruitment Agent","uc.u1f1":"Automatic CV scoring & filtering","uc.u1f2":"Chatbot pre-qualification","uc.u1f3":"Interview scheduling","uc.u1f4":"Job posting generation","uc.u1f5":"Objective candidate report",
+  "uc.u2h":"Onboarding Agent","uc.u2f1":"Automated day-1 integration path","uc.u2f2":"Interactive AI training","uc.u2f3":"30 / 60 / 90-day check-ins","uc.u2f4":"Automated document admin","uc.u2f5":"Continuous new-joiner feedback",
+  "uc.u3h":"Performance Agent","uc.u3f1":"Automated OKRs & tracking","uc.u3f2":"AI-assisted 360° feedback","uc.u3f3":"Flight risk detection","uc.u3f4":"Auto development plans","uc.u3f5":"CHRO analytics report",
+  "uc.u4h":"HR Chatbot 24/7","uc.u4f1":"Real-time employee FAQ","uc.u4f2":"Automated leave requests","uc.u4f3":"On-demand payslips","uc.u4f4":"Regulatory compliance","uc.u4f5":"Support in 12 languages",
+  "uc.tryfree":"Try for free →","uc.trydemo":"Request a demo →",
+  "r.lbl":"// Results","r.h2":"What our clients have measured",
+  "r.s1l":"Recruitment time","r.s1s":"from 45 days to 12 days","r.s2l":"Employee satisfaction","r.s2s":"vs 67% before deployment","r.s3l":"HR productivity","r.s3s":"on administrative tasks","r.s4l":"Unwanted turnover","r.s4s":"thanks to predictive analytics",
+  "r.quote":"\"AIYDOU transformed our HR department. In 3 months, our team was freed from 70% of repetitive tasks and can finally focus on what truly matters: our people.\"",
+  "r.author":"— Marie-Sophie Dubois, CHRO · Nexora Group, 2,800 employees",
+  "m.lbl":"// Our Method","m.h2":"Live in 10 weeks","m.sub":"A proven methodology that minimises risk and maximises ROI from the very first weeks.",
+  "m.p1t":"Discovery","m.p1w":"Weeks 1–2","m.p1d":"Full HR audit, process mapping and identification of high-impact quick wins.",
+  "m.p2t":"Design","m.p2w":"Weeks 3–5","m.p2d":"AI agent architecture, mockups and prototypes validated with your HR teams.",
+  "m.p3t":"Deployment","m.p3w":"Weeks 6–10","m.p3d":"Development, HRIS integration, user testing and go-live with enhanced support.",
+  "m.p4t":"Optimisation","m.p4w":"Ongoing","m.p4d":"KPI monitoring, continuous model improvement and monthly strategic support.",
+  "w.lbl":"// Why AIYDOU","w.h2":"HR and AI specialists — not one or the other","w.sub":"Most AI vendors don't know HR. Most HR firms don't master AI. We do both.",
+  "w.w1h":"HR × AI Experts","w.w1p":"Unique hybrid team: experienced CHROs and cutting-edge AI engineers. We speak both languages.",
+  "w.w2h":"Secure Data","w.w2p":"European sovereign hosting, GDPR guaranteed, zero HR data shared with third parties.",
+  "w.w3h":"ROI in 3 months","w.w3p":"First agent live in 6 weeks. Measurable, documented ROI from month 3.",
+  "w.w4h":"Zero vendor lock-in","w.w4p":"Built on your existing platform. You keep full control — no vendor lock-in.",
+  "w.w5h":"Continuous support","w.w5p":"Dedicated CSM, monthly reviews, model optimisation and team training included.",
+  "w.w6h":"Multilingual & global","w.w6p":"Agents in 12 languages, local regulatory compliance, centralised multi-country deployment.",
+  "form.lbl":"// AI Training","form.h2":"Your HR team, AI-trained in 2 days","form.sub":"Not just the tool — the skill. We train your HR teams to use, supervise and optimise their AI agents for the long run.",
+  "form.f1.title":"Intensive Workshop","form.f1.sub":"On-site or remote · 2 days","form.f1.price":"€1,900","form.f1.per":"per session · up to 12 participants",
+  "form.f1.l1":"Understanding AI and HR agents","form.f1.l2":"Supervising and correcting an agent","form.f1.l3":"Hands-on with your own processes","form.f1.l4":"AIYDOU certification included",
+  "form.f2.title":"E-learning Programme","form.f2.sub":"At your own pace · 12-month access","form.f2.price":"€490","form.f2.per":"per employee / year",
+  "form.f2.l1":"6 video modules HR × AI","form.f2.l2":"Guided practical exercises","form.f2.l3":"Updates included (new laws, new LLMs)","form.f2.l4":"Team progress dashboard",
+  "form.f3.title":"Monthly Coaching","form.f3.sub":"Ongoing support · post-deployment","form.f3.price":"€390","form.f3.per":"per month · no commitment",
+  "form.f3.l1":"2 live sessions per month (1h each)","form.f3.l2":"Unlimited messaging support","form.f3.l3":"Agent performance review","form.f3.l4":"Monthly optimisation recommendations",
+  "form.cta1":"Book a session →","form.cta2":"Talk to a trainer →",
+  "form.note":"CPD-eligible training · Up to 100% funding available","form.link":"See the full programme →",
+  "pr.lbl":"// Pricing","pr.h2":"Clear pricing — deployment included, ROI guaranteed","pr.sub":"No hidden fees. No surprises. The monthly subscription covers <strong>Prompt Ops</strong> — the active maintenance of your agents so they stay sharp.",
+  "pr.why.lbl":"// Why a monthly subscription?","pr.why.h":"An HR agent isn't software you install once","pr.why.p":"Your instructions evolve with your company: new legislation, HRIS changes, revised internal policies, LLM model updates. Without maintenance, an agent drifts and produces incorrect responses.",
+  "pr.ops.title":"⚙ AIYDOU Prompt Ops","pr.ops.p":"We keep your agents' instructions up to date continuously — prompt revisions, guaranteed LLM compatibility on every new version (Gemini, Copilot, Claude), HR regulatory monitoring, and behavioural monitoring to detect drift before your teams do.",
+  "pr.tier.deploy":"Deployment included","pr.tier.ops":"Monthly Prompt Ops",
+  "pr.s":"Starter","pr.st":"SMB · up to 200 employees","pr.price":"€3,900","pr.sp":"one-shot deployment · then <strong>€290/mo</strong>",
+  "pr.sf1":"1 AI Onboarding Agent","pr.sf2":"Connection to existing tools (Drive, SharePoint, etc)","pr.sf3":"Team training (1 day)",
+  "pr.audit":"✅ HR Audit included","pr.sop1":"1 prompt revision/month","pr.sop2":"LLM compatibility guaranteed","pr.sop3":"Behavioural monitoring","pr.sop4":"Ticket support 48h",
+  "pr.b":"Business","pr.bt":"Mid-market · 200–2,000 employees","pr.bprice":"€7,900","pr.bp":"one-shot deployment · then <strong>€690/mo</strong>",
+  "pr.bf1":"3 custom AI Agents","pr.bf2":"Connection to up to 3 internal data sources","pr.bf3":"Full team training",
+  "pr.bop1":"4 prompt revisions/month (1 per agent)","pr.bop2":"HR regulatory monitoring included","pr.bop3":"A/B testing of instructions","pr.bop4":"Monthly CSM review · 30 min","pr.bop5":"Priority support 4h (Slack/Teams)",
+  "pr.e":"Enterprise","pr.et":"Large corps · 2,000+ employees","pr.eprice":"Custom quote","pr.erecur":"from <strong>€1,200/mo</strong>",
+  "pr.ef1":"Unlimited AI Agents","pr.ef2":"Bespoke architecture","pr.ef3":"Custom integrations",
+  "pr.eop1":"Unlimited revisions","pr.eop2":"Dedicated Prompt Ops engineer","pr.eop3":"Versioned instruction changelog","pr.eop4":"Behavioural SLA guaranteed","pr.eop5":"On-premise hosting available",
+  "pr.btn1":"Book my free audit →","pr.btn2":"Talk to our team →",
+  "cta.lbl":"// Get Started","cta.h2":"Your HR team deserves better than spreadsheets.",
+  "cta.sub":"Book a free 30-minute audit. We'll identify together what we can automate for you — and tell you exactly what you'll gain.",
+  "cta.btn1":"Book my free audit →","cta.btn2":"See client cases","cta.note":"No commitment · No credit card · Reply within 24h",
+  "f.about":"About","f.blog":"Blog","f.legal":"Legal","f.privacy":"Privacy","f.contact":"Contact","f.copy":"© 2025 AIYDOU · connect@aiydou.com"
+}};
+
+let lang = 'fr';
+
+function setLang(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  const bfr=document.getElementById('btn-fr'); if(bfr) bfr.classList.toggle('active', l === 'fr');
+  const ben=document.getElementById('btn-en'); if(ben) ben.classList.toggle('active', l === 'en');
+  // update recommended label on featured plan
+  const pf=document.querySelector('.plan.feat'); if(pf) pf.setAttribute('data-label', l === 'fr' ? 'Recommandé' : 'Recommended');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (T[l][k] !== undefined) el.innerHTML = T[l][k];
+  });
+  if(window._termPlay) { try { window._termPlay(); } catch(e) {} }
+  document.title = l === 'fr'
+    ? 'AIYDOU — Automatisez vos RH avec l\'IA que vous utilisez déjà'
+    : 'AIYDOU — Automate your HR with the AI you already have';
+}
+
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn  = document.getElementById('hamburger');
+  if(menu) menu.classList.toggle('open');
+  if(btn) btn.classList.toggle('open');
+}
+function closeMenu() {
+  const m=document.getElementById('mobileMenu'); if(m) m.classList.remove('open');
+  const h=document.getElementById('hamburger'); if(h) h.classList.remove('open');
+}
+// Close menu on scroll
+window.addEventListener('scroll', closeMenu, {passive:true});
+
+
+
+
+(function(){
+  var delays=[0,900,1800,3000,4200];
+  var timers=[];
+  function reset(){
+    timers.forEach(clearTimeout); timers=[];
+    for(var i=0;i<5;i++){
+      var el=document.getElementById('hr'+i);
+      if(el){el.classList.remove('show');el.style.display='';}
+    }
+  }
+  function play(){
+    reset();
+    delays.forEach(function(d,i){
+      timers.push(setTimeout(function(idx){
+        var el=document.getElementById('hr'+idx);
+        if(!el)return;
+        el.classList.add('show');
+        if(idx===2){var t=document.getElementById('hr1');if(t)t.style.display='none';}
+      },d,i));
+    });
+    timers.push(setTimeout(play,7200));
+  }
+  window._termPlay=play;
+  if(document.getElementById('hr0')) { try { play(); } catch(e) {} }
+})();
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Active nav
+const secs = [...document.querySelectorAll('section[id]')];
+const navAs = [...document.querySelectorAll('.nav-links a')];
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 80; let cur = '';
+  secs.forEach(s => { if (y >= s.offsetTop) cur = s.id; });
+  navAs.forEach(a => {
+    const on = a.getAttribute('href') === '#' + cur;
+    a.style.color = on ? 'var(--white)' : '';
+    a.classList.toggle('active', on);
+  });
+}, { passive: true });
+
+function openDemoModal(){
+  const ov=document.getElementById('demoOverlay'); if(ov){ ov.classList.add('show'); document.body.style.overflow='hidden'; }
+  applyDemoLang();
+}
+function closeDemoModal(){
+  const ov2=document.getElementById('demoOverlay'); if(ov2) ov2.classList.remove('show');
+  document.body.style.overflow='';
+}
+function submitDemo(){
+  const email=document.getElementById('dm-email').value.trim();
+  const fname=document.getElementById('dm-fname').value.trim();
+  const lname=document.getElementById('dm-lname').value.trim();
+  const job=document.getElementById('dm-job').value.trim();
+  const company=document.getElementById('dm-company').value.trim();
+  if(!fname||!email){alert('Veuillez renseigner votre prénom et email.');return;}
+
+  // Send email via Web3Forms (free, no backend needed)
+  const formData = new FormData();
+  formData.append('access_key', 'cc101d20-2438-4ed5-9c60-fb91819eae7b');
+  formData.append('to', 'connect@aiydou.com');
+  formData.append('subject', 'Nouvelle demande de démo - AIYDOU');
+  formData.append('from_name', 'AIYDOU Site');
+  formData.append('message',
+    `Nouvelle demande de démo:\n\n` +
+    `Prénom: ${fname}\n` +
+    `Nom: ${lname}\n` +
+    `Email: ${email}\n` +
+    `Poste: ${job}\n` +
+    `Entreprise: ${company}`
+  );
+  formData.append('email', email);
+
+  fetch('https://api.web3forms.com/submit', { method:'POST', body: formData })
+    .then(r => r.json())
+    .then(data => {
+      const df=document.getElementById('demoForm'); if(df) df.style.display='none';
+      const ds=document.getElementById('demoSuccess'); if(ds) ds.style.display='block';
+    })
+    .catch(() => {
+      // Fallback: still show success
+      const df=document.getElementById('demoForm'); if(df) df.style.display='none';
+      const ds=document.getElementById('demoSuccess'); if(ds) ds.style.display='block';
+    });
+}
+function applyDemoLang(){
+  const isFR = (typeof lang==='undefined')||lang==='fr';
+  const dmt=document.getElementById('dm-title'); if(dmt) dmt.textContent = isFR ? 'Planifier une démo de 30 minutes' : 'Schedule a 30-minute demo';
+  document.getElementById('dm-fname').placeholder = isFR ? 'Prénom' : 'First name';
+  document.getElementById('dm-lname').placeholder = isFR ? 'Nom' : 'Last name';
+  document.getElementById('dm-email').placeholder = isFR ? 'Email professionnel' : 'Work email';
+  document.getElementById('dm-job').placeholder = isFR ? 'Titre du poste' : 'Job title';
+  document.getElementById('dm-company').placeholder = isFR ? "Nom de l'entreprise" : "Company name";
+  const dmb=document.getElementById('dm-btn'); if(dmb) dmb.textContent = isFR ? 'Planifier ma démo →' : 'Schedule demo →';
+  const dmn=document.getElementById('dm-note'); if(dmn) dmn.textContent = isFR ? 'Sans engagement · Réponse sous 24h · Démo adaptée à votre secteur' : 'No commitment · Reply within 24h · Demo tailored to your industry';
+  document.getElementById('dm-ok-title').textContent = isFR ? 'Demande reçue !' : 'Request received!';
+  document.getElementById('dm-ok-msg').textContent = isFR ? 'Nous vous contacterons sous 24h pour confirmer votre créneau de démo.' : 'We will contact you within 24h to confirm your demo slot.';
+  // Size options
+  const sizes = isFR
+    ? ["Taille de l'entreprise",'1–10 salariés','10–50 salariés','50–200 salariés','200–1 000 salariés','1 000–5 000 salariés','5 000+ salariés']
+    : ['Employee size','1–10 employees','10–50 employees','50–200 employees','200–1,000 employees','1,000–5,000 employees','5,000+ employees'];
+  const sel=document.getElementById('dm-size'); if(!sel) return;
+  sel.innerHTML=sizes.map((s,i)=>`<option value="" ${i===0?'disabled selected':''}>${s}</option>`).join('');
+}
+
+function openFormationModal(){
+  document.getElementById('formationOverlay').style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeFormationModal(){
+  document.getElementById('formationOverlay').style.display='none';
+  document.body.style.overflow='';
+}
+function submitFormation(){
+  const fname=document.getElementById('fm-fname').value.trim();
+  const email=document.getElementById('fm-email').value.trim();
+  if(!fname||!email){alert(lang==='fr'?'Veuillez remplir les champs obligatoires.':'Please fill in the required fields.');return;}
+  document.getElementById('formationForm').style.display='none';
+  document.getElementById('formationSuccess').style.display='block';
+}
+</script>
+
+</body>
+</html>
