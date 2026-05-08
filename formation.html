@@ -1455,21 +1455,13 @@ function submitFormation(){
   const size=document.getElementById('fm-size').value;
   if(!fname||!email){alert(lang==='fr'?'Veuillez remplir les champs obligatoires.':'Please fill in the required fields.');return;}
 
-  fetch('https://formspree.io/f/xqenyqva', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: JSON.stringify({
-      email: email,
-      subject: 'Nouvelle demande de formation - AIYDOU',
-      prenom: fname,
-      nom: lname,
-      poste: job,
-      entreprise: company,
-      programme: format,
-      taille_equipe: size,
-      message: `Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}\nProgramme: ${format}\nTaille équipe: ${size}`
-    })
-  })
+  const ff = new FormData();
+  ff.append('access_key', 'cc101d20-2438-4ed5-9c60-fb91819eae7b');
+  ff.append('subject', 'Nouvelle demande de formation - AIYDOU');
+  ff.append('from_name', 'AIYDOU Formation');
+  ff.append('email', email);
+  ff.append('message', `Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}\nProgramme: ${format}\nTaille équipe: ${size}`);
+  fetch('https://api.web3forms.com/submit', {method:'POST', body:ff})
     .then(r=>r.json())
     .then(()=>{
       document.getElementById('formationForm').style.display='none';
