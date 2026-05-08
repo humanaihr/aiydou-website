@@ -521,6 +521,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <ul class="nav-links">
     <li><a href="#services"    data-i18n="nav.solutions">Solutions</a></li>
     <li><a href="#usecases"   data-i18n="nav.usecases">Use cases</a></li>
+    <li><a href="#formation" data-i18n="nav.formation">Formation</a></li>
     <li><a href="#pricing"    data-i18n="nav.pricing">Pricing</a></li>
     <li><a href="#whyus"      data-i18n="nav.about">About us</a></li>
   </ul>
@@ -541,6 +542,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
 <div class="nav-mobile" id="mobileMenu">
   <a href="#services"    data-i18n="nav.solutions"  onclick="closeMenu()">Solutions</a>
   <a href="#usecases"   data-i18n="nav.usecases"   onclick="closeMenu()">Use cases</a>
+  <a href="#formation" data-i18n="nav.formation" onclick="closeMenu()">Formation</a>
   <a href="#pricing"    data-i18n="nav.pricing"    onclick="closeMenu()">Pricing</a>
   <a href="#whyus"      data-i18n="nav.about"      onclick="closeMenu()">About us</a>
   <button class="nav-mobile-cta" onclick="openDemoModal();closeMenu()" data-i18n="nav.cta">Demander une démo</button>
@@ -760,6 +762,74 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
+<!-- FORMATION -->
+<section id="formation" style="background:var(--bg2);">
+  <div class="container">
+    <div class="sh c reveal">
+      <div class="section-label" data-i18n="form.lbl">// Formation IA</div>
+      <h2 data-i18n="form.h2">Vos équipes RH, formées à l'IA en 2 jours</h2>
+      <p class="section-sub" data-i18n="form.sub">Pas juste l'outil — la compétence. On forme vos équipes RH à utiliser, superviser et optimiser leurs agents IA durablement.</p>
+    </div>
+
+    <div class="prc-grid reveal" style="grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;">
+
+      <div class="plan">
+        <div style="font-size:2rem;margin-bottom:12px;">🎓</div>
+        <div class="pname" data-i18n="form.f1.title">Workshop Intensif</div>
+        <div class="ptgt" data-i18n="form.f1.sub">Présentiel ou distanciel · 2 jours</div>
+        <div class="pprice-setup" data-i18n="form.f1.price">1 900€</div>
+        <div class="pprice-recur" data-i18n="form.f1.per">par session · jusqu'à 12 participants</div>
+        <hr class="pdiv">
+        <ul class="pfeats">
+          <li data-i18n="form.f1.l1">Comprendre l'IA et les agents RH</li>
+          <li data-i18n="form.f1.l2">Superviser et corriger un agent</li>
+          <li data-i18n="form.f1.l3">Cas pratiques sur vos propres processus</li>
+          <li data-i18n="form.f1.l4">Certification AIYDOU incluse</li>
+        </ul>
+        <button class="pbtn" onclick="openFormationModal()" data-i18n="form.cta1">Réserver une session →</button>
+      </div>
+
+      <div class="plan feat" data-label-fr="Populaire" data-label-en="Popular">
+        <div style="font-size:2rem;margin-bottom:12px;">📚</div>
+        <div class="pname" data-i18n="form.f2.title">Programme E-learning</div>
+        <div class="ptgt" data-i18n="form.f2.sub">À votre rythme · accès 12 mois</div>
+        <div class="pprice-setup" data-i18n="form.f2.price">490€</div>
+        <div class="pprice-recur" data-i18n="form.f2.per">par collaborateur / an</div>
+        <hr class="pdiv">
+        <ul class="pfeats">
+          <li data-i18n="form.f2.l1">6 modules vidéo RH × IA</li>
+          <li data-i18n="form.f2.l2">Exercices pratiques guidés</li>
+          <li data-i18n="form.f2.l3">Mises à jour incluses (nouvelles lois, nouveaux LLM)</li>
+          <li data-i18n="form.f2.l4">Tableau de bord progression équipe</li>
+        </ul>
+        <button class="pbtn" onclick="openFormationModal()" data-i18n="form.cta1">Démarrer l'accès →</button>
+      </div>
+
+      <div class="plan">
+        <div style="font-size:2rem;margin-bottom:12px;">🔄</div>
+        <div class="pname" data-i18n="form.f3.title">Coaching Mensuel</div>
+        <div class="ptgt" data-i18n="form.f3.sub">Accompagnement continu · post-déploiement</div>
+        <div class="pprice-setup" data-i18n="form.f3.price">390€</div>
+        <div class="pprice-recur" data-i18n="form.f3.per">par mois · sans engagement</div>
+        <hr class="pdiv">
+        <ul class="pfeats">
+          <li data-i18n="form.f3.l1">2 sessions live par mois (1h chacune)</li>
+          <li data-i18n="form.f3.l2">Réponses illimitées par messagerie</li>
+          <li data-i18n="form.f3.l3">Revue des performances de vos agents</li>
+          <li data-i18n="form.f3.l4">Optimisations recommandées chaque mois</li>
+        </ul>
+        <button class="pbtn" onclick="openFormationModal()" data-i18n="form.cta2">Parler à un formateur →</button>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="margin-top:32px;text-align:center;">
+      <p style="font-size:0.95rem;color:var(--muted);" data-i18n="form.note">Formation éligible OPCO · Prise en charge possible jusqu'à 100%</p>
+      <a href="formation.html" style="display:inline-block;margin-top:14px;font-weight:600;color:var(--teal);text-decoration:none;font-size:0.95rem;" data-i18n="form.link">Voir le programme complet →</a>
+    </div>
+  </div>
+</section>
+
 <!-- PRICING -->
 <section id="pricing">
   <div class="container">
@@ -953,7 +1023,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
 const T = {
 fr: {
   "nav.problem":"Problème","nav.platforms":"Plateformes","nav.solutions":"Solutions","nav.services":"Services",
-  "nav.usecases":"Use cases","nav.results":"Résultats","nav.pricing":"Pricing","nav.cta":"Demander une démo",
+  "nav.usecases":"Use cases","nav.formation":"Formation","nav.results":"Résultats","nav.pricing":"Pricing","nav.cta":"Demander une démo",
   
   "hero.line1":"Automatisez vos RH avec l'IA que vous <span class='t'>utilisez déjà</span>",
   "hero.sub":"Réduisez de 60% les tâches RH manuelles. Premier agent RH opérationnel en 6 semaines.",
@@ -1079,7 +1149,16 @@ fr: {
   "w.w1h":"Experts RH × IA","w.w1p":"Équipe hybride unique : DRH expérimentés et ingénieurs IA de pointe.","w.w2h":"Données sécurisées","w.w2p":"Hébergement souverain européen, RGPD garanti, aucune donnée partagée avec des tiers.",
   "w.w3h":"ROI en 3 mois","w.w3p":"Premier agent opérationnel en 6 semaines. ROI mesurable dès le 3e mois.","w.w4h":"Zero vendor lock-in","w.w4p":"Construit sur votre plateforme existante. Vous gardez le contrôle total.",
   "w.w5h":"Accompagnement continu","w.w5p":"CSM dédié, revues mensuelles, optimisation et formation équipes inclus.","w.w6h":"Multilingue & international","w.w6p":"Agents en 12 langues, conformité locale, déploiement multi-pays centralisé.",
-  "pr.lbl":"// Offres","pr.h2":"Des formules claires — déploiement inclus, ROI garanti","pr.sub":"Pas de frais cachés. Pas de surprise. L'abonnement mensuel couvre le <strong>Prompt Ops</strong> — la maintenance active de vos agents pour qu'ils restent performants.",
+  "form.lbl":"// Formation IA","form.h2":"Vos équipes RH, formées à l'IA en 2 jours","form.sub":"Pas juste l'outil — la compétence. On forme vos équipes RH à utiliser, superviser et optimiser leurs agents IA durablement.",
+  "form.f1.title":"Workshop Intensif","form.f1.sub":"Présentiel ou distanciel · 2 jours","form.f1.price":"1 900€","form.f1.per":"par session · jusqu'à 12 participants",
+  "form.f1.l1":"Comprendre l'IA et les agents RH","form.f1.l2":"Superviser et corriger un agent","form.f1.l3":"Cas pratiques sur vos propres processus","form.f1.l4":"Certification AIYDOU incluse",
+  "form.f2.title":"Programme E-learning","form.f2.sub":"À votre rythme · accès 12 mois","form.f2.price":"490€","form.f2.per":"par collaborateur / an",
+  "form.f2.l1":"6 modules vidéo RH × IA","form.f2.l2":"Exercices pratiques guidés","form.f2.l3":"Mises à jour incluses (nouvelles lois, nouveaux LLM)","form.f2.l4":"Tableau de bord progression équipe",
+  "form.f3.title":"Coaching Mensuel","form.f3.sub":"Accompagnement continu · post-déploiement","form.f3.price":"390€","form.f3.per":"par mois · sans engagement",
+  "form.f3.l1":"2 sessions live par mois (1h chacune)","form.f3.l2":"Réponses illimitées par messagerie","form.f3.l3":"Revue des performances de vos agents","form.f3.l4":"Optimisations recommandées chaque mois",
+  "form.cta1":"Réserver une session →","form.cta2":"Parler à un formateur →",
+  "form.note":"Formation éligible OPCO · Prise en charge possible jusqu'à 100%","form.link":"Voir le programme complet →",
+  "pr.lbl":"// Offres","pr.sub":"Pas de frais cachés. Pas de surprise. L'abonnement mensuel couvre le <strong>Prompt Ops</strong> — la maintenance active de vos agents pour qu'ils restent performants.",
   "pr.why.lbl":"// Pourquoi un abonnement mensuel ?","pr.why.h":"Un agent RH n'est pas un logiciel qu'on installe une fois","pr.why.p":"Vos instructions évoluent avec votre entreprise : nouvelle législation, changement de SIRH, politique interne révisée, mise à jour du modèle LLM. Sans maintenance, un agent dérive et produit des réponses incorrectes.",
   "pr.ops.title":"⚙ Le Prompt Ops AIYDOU","pr.ops.p":"Nous maintenons les instructions de vos agents à jour en continu — révisions de prompts, compatibilité LLM garantie sur chaque nouvelle version (Gemini, Copilot, Claude), veille réglementaire RH, et monitoring comportemental pour détecter les dérives avant vos équipes.",
   "pr.tier.deploy":"Déploiement inclus","pr.tier.ops":"Prompt Ops mensuel",
@@ -1100,7 +1179,7 @@ fr: {
 },
 en: {
   "nav.problem":"Problem","nav.platforms":"Platforms","nav.solutions":"Solutions","nav.services":"Services",
-  "nav.usecases":"Use Cases","nav.results":"Results","nav.pricing":"Pricing","nav.about":"About us","nav.cta":"Book a Demo",
+  "nav.usecases":"Use Cases","nav.formation":"Training","nav.results":"Results","nav.pricing":"Pricing","nav.about":"About us","nav.cta":"Book a Demo",
   
   "hero.line1":"Automate your HR with the AI you <span class='t'>already have</span>",
   "hero.sub":"Cut manual HR tasks by 60%. First HR agent live in 6 weeks.",
@@ -1229,6 +1308,15 @@ en: {
   "w.w4h":"Zero vendor lock-in","w.w4p":"Built on your existing platform. You keep full control — no vendor lock-in.",
   "w.w5h":"Continuous support","w.w5p":"Dedicated CSM, monthly reviews, model optimisation and team training included.",
   "w.w6h":"Multilingual & global","w.w6p":"Agents in 12 languages, local regulatory compliance, centralised multi-country deployment.",
+  "form.lbl":"// AI Training","form.h2":"Your HR team, AI-trained in 2 days","form.sub":"Not just the tool — the skill. We train your HR teams to use, supervise and optimise their AI agents for the long run.",
+  "form.f1.title":"Intensive Workshop","form.f1.sub":"On-site or remote · 2 days","form.f1.price":"€1,900","form.f1.per":"per session · up to 12 participants",
+  "form.f1.l1":"Understanding AI and HR agents","form.f1.l2":"Supervising and correcting an agent","form.f1.l3":"Hands-on with your own processes","form.f1.l4":"AIYDOU certification included",
+  "form.f2.title":"E-learning Programme","form.f2.sub":"At your own pace · 12-month access","form.f2.price":"€490","form.f2.per":"per employee / year",
+  "form.f2.l1":"6 video modules HR × AI","form.f2.l2":"Guided practical exercises","form.f2.l3":"Updates included (new laws, new LLMs)","form.f2.l4":"Team progress dashboard",
+  "form.f3.title":"Monthly Coaching","form.f3.sub":"Ongoing support · post-deployment","form.f3.price":"€390","form.f3.per":"per month · no commitment",
+  "form.f3.l1":"2 live sessions per month (1h each)","form.f3.l2":"Unlimited messaging support","form.f3.l3":"Agent performance review","form.f3.l4":"Monthly optimisation recommendations",
+  "form.cta1":"Book a session →","form.cta2":"Talk to a trainer →",
+  "form.note":"CPD-eligible training · Up to 100% funding available","form.link":"See the full programme →",
   "pr.lbl":"// Pricing","pr.h2":"Clear pricing — deployment included, ROI guaranteed","pr.sub":"No hidden fees. No surprises. The monthly subscription covers <strong>Prompt Ops</strong> — the active maintenance of your agents so they stay sharp.",
   "pr.why.lbl":"// Why a monthly subscription?","pr.why.h":"An HR agent isn't software you install once","pr.why.p":"Your instructions evolve with your company: new legislation, HRIS changes, revised internal policies, LLM model updates. Without maintenance, an agent drifts and produces incorrect responses.",
   "pr.ops.title":"⚙ AIYDOU Prompt Ops","pr.ops.p":"We keep your agents' instructions up to date continuously — prompt revisions, guaranteed LLM compatibility on every new version (Gemini, Copilot, Claude), HR regulatory monitoring, and behavioural monitoring to detect drift before your teams do.",
@@ -1392,8 +1480,72 @@ function applyDemoLang(){
   sel.innerHTML=sizes.map((s,i)=>`<option value="" ${i===0?'disabled selected':''}>${s}</option>`).join('');
 }
 
+function openFormationModal(){
+  document.getElementById('formationOverlay').style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeFormationModal(){
+  document.getElementById('formationOverlay').style.display='none';
+  document.body.style.overflow='';
+}
+function submitFormation(){
+  const fname=document.getElementById('fm-fname').value.trim();
+  const email=document.getElementById('fm-email').value.trim();
+  if(!fname||!email){alert(lang==='fr'?'Veuillez remplir les champs obligatoires.':'Please fill in the required fields.');return;}
+  document.getElementById('formationForm').style.display='none';
+  document.getElementById('formationSuccess').style.display='block';
+}
+
 </script>
 
+
+<!-- FORMATION MODAL -->
+<div class="demo-overlay" id="formationOverlay" onclick="if(event.target===this)closeFormationModal()" style="display:none;">
+  <div class="demo-modal">
+    <button class="demo-close" onclick="closeFormationModal()" aria-label="Close">✕</button>
+    <div class="demo-head">
+      <div class="demo-head-icon">🎓</div>
+      <h2 id="fm-title">Réserver votre programme de formation</h2>
+    </div>
+
+    <div style="background:var(--bg2,#f8f9fb);border-radius:10px;padding:16px 18px;margin-bottom:20px;border-left:3px solid var(--teal,#2563eb);">
+      <div style="font-weight:700;font-size:0.9rem;margin-bottom:6px;">👨‍🏫 Votre formateur</div>
+      <p style="font-size:0.85rem;color:#374151;line-height:1.6;margin:0;">Formation dispensée par un <strong>expert RH & IA avec 17 ans d'expérience</strong> — ancien DRH, praticien de l'intelligence artificielle appliquée aux ressources humaines. Pas de théorie creuse : des méthodes issues du terrain, testées dans des organisations de toutes tailles.</p>
+    </div>
+
+    <div class="demo-form" id="formationForm">
+      <div class="demo-row">
+        <input class="demo-input" type="text" id="fm-fname" placeholder="Prénom *" required/>
+        <input class="demo-input" type="text" id="fm-lname" placeholder="Nom *" required/>
+      </div>
+      <input class="demo-input" type="email" id="fm-email" placeholder="Email professionnel *" required/>
+      <input class="demo-input" type="text" id="fm-job" placeholder="Titre du poste"/>
+      <input class="demo-input" type="text" id="fm-company" placeholder="Nom de l'entreprise"/>
+      <select class="demo-select" id="fm-format">
+        <option value="" disabled selected>Quel programme vous intéresse ?</option>
+        <option>🎓 Workshop Intensif — 2 jours (1 900€)</option>
+        <option>📚 Programme E-learning — 6 modules (490€/pers)</option>
+        <option>🔄 Coaching Mensuel (390€/mois)</option>
+        <option>Je veux être conseillé(e)</option>
+      </select>
+      <select class="demo-select" id="fm-size">
+        <option value="" disabled selected>Taille de votre équipe RH</option>
+        <option>1–5 personnes</option>
+        <option>5–15 personnes</option>
+        <option>15–50 personnes</option>
+        <option>50+ personnes</option>
+      </select>
+      <button class="demo-submit" id="fm-btn" onclick="submitFormation()">Réserver ma formation →</button>
+      <div class="demo-note" id="fm-note">Sans engagement · Réponse sous 24h · Financement OPCO possible</div>
+    </div>
+
+    <div class="demo-success" id="formationSuccess" style="display:none;">
+      <div style="font-size:3rem;margin-bottom:12px">🎉</div>
+      <h3>Demande reçue !</h3>
+      <p>Notre expert vous contactera sous 24h pour finaliser votre programme et étudier les options de financement OPCO.</p>
+    </div>
+  </div>
+</div>
 
 
 <!-- DEMO MODAL -->
