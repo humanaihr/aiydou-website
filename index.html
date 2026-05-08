@@ -1429,19 +1429,13 @@ function submitDemo(){
   if(!fname||!email){alert('Veuillez renseigner votre prénom et email.');return;}
 
   // Send email via Web3Forms (free, no backend needed)
-  fetch('https://formspree.io/f/xqenyqva', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: JSON.stringify({
-      email: email,
-      subject: 'Nouvelle demande de démo - AIYDOU',
-      prenom: fname,
-      nom: lname,
-      poste: job,
-      entreprise: company,
-      message: `Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}`
-    })
-  })
+  const fd = new FormData();
+  fd.append('access_key', 'cc101d20-2438-4ed5-9c60-fb91819eae7b');
+  fd.append('subject', 'Nouvelle demande de démo - AIYDOU');
+  fd.append('from_name', 'AIYDOU Site');
+  fd.append('email', email);
+  fd.append('message', `Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}`);
+  fetch('https://api.web3forms.com/submit', {method:'POST', body:fd})
     .then(r => r.json())
     .then(() => {
       document.getElementById('demoForm').style.display='none';
