@@ -1429,29 +1429,25 @@ function submitDemo(){
   if(!fname||!email){alert('Veuillez renseigner votre prénom et email.');return;}
 
   // Send email via Web3Forms (free, no backend needed)
-  const formData = new FormData();
-  formData.append('access_key', 'cc101d20-2438-4ed5-9c60-fb91819eae7b');
-  formData.append('to', 'connect@aiydou.com');
-  formData.append('subject', 'Nouvelle demande de démo - AIYDOU');
-  formData.append('from_name', 'AIYDOU Site');
-  formData.append('message',
-    `Nouvelle demande de démo:\n\n` +
-    `Prénom: ${fname}\n` +
-    `Nom: ${lname}\n` +
-    `Email: ${email}\n` +
-    `Poste: ${job}\n` +
-    `Entreprise: ${company}`
-  );
-  formData.append('email', email);
-
-  fetch('https://api.web3forms.com/submit', { method:'POST', body: formData })
+  fetch('https://formspree.io/f/xqenyqva', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({
+      email: email,
+      subject: 'Nouvelle demande de démo - AIYDOU',
+      prenom: fname,
+      nom: lname,
+      poste: job,
+      entreprise: company,
+      message: `Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}`
+    })
+  })
     .then(r => r.json())
-    .then(data => {
+    .then(() => {
       document.getElementById('demoForm').style.display='none';
       document.getElementById('demoSuccess').style.display='block';
     })
     .catch(() => {
-      // Fallback: still show success
       document.getElementById('demoForm').style.display='none';
       document.getElementById('demoSuccess').style.display='block';
     });
