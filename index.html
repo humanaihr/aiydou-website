@@ -1490,10 +1490,29 @@ function closeFormationModal(){
 }
 function submitFormation(){
   const fname=document.getElementById('fm-fname').value.trim();
+  const lname=document.getElementById('fm-lname')?document.getElementById('fm-lname').value.trim():'';
   const email=document.getElementById('fm-email').value.trim();
+  const job=document.getElementById('fm-job')?document.getElementById('fm-job').value.trim():'';
+  const company=document.getElementById('fm-company')?document.getElementById('fm-company').value.trim():'';
+  const format=document.getElementById('fm-format')?document.getElementById('fm-format').value:'';
+  const size=document.getElementById('fm-size')?document.getElementById('fm-size').value:'';
   if(!fname||!email){alert(lang==='fr'?'Veuillez remplir les champs obligatoires.':'Please fill in the required fields.');return;}
-  document.getElementById('formationForm').style.display='none';
-  document.getElementById('formationSuccess').style.display='block';
+  const ff=new FormData();
+  ff.append('access_key','cc101d20-2438-4ed5-9c60-fb91819eae7b');
+  ff.append('subject','Nouvelle demande de formation - AIYDOU');
+  ff.append('from_name','AIYDOU Formation');
+  ff.append('email',email);
+  ff.append('message',`Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}\nProgramme: ${format}\nTaille équipe: ${size}`);
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:ff})
+    .then(r=>r.json())
+    .then(()=>{
+      document.getElementById('formationForm').style.display='none';
+      document.getElementById('formationSuccess').style.display='block';
+    })
+    .catch(()=>{
+      document.getElementById('formationForm').style.display='none';
+      document.getElementById('formationSuccess').style.display='block';
+    });
 }
 
 </script>
