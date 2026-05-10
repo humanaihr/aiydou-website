@@ -509,22 +509,6 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   .demo-row,.demo-phone-row{grid-template-columns:1fr}
   .demo-modal{padding:24px 20px}
 }
-
-/* ── MOBILE OVERFLOW FIX ── */
-@media(max-width:600px){
-  html, body { overflow-x: hidden !important; max-width: 100vw; }
-  .prc-grid { grid-template-columns: 1fr !important; }
-  div[style*="grid-template-columns:repeat(3,1fr)"],
-  div[style*="grid-template-columns: repeat(3,1fr)"] {
-    grid-template-columns: 1fr !important;
-  }
-  div[style*="grid-template-columns:repeat(4,1fr)"],
-  div[style*="grid-template-columns: repeat(4,1fr)"] {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  .container { overflow-x: hidden; }
-  section { overflow-x: hidden; }
-}
 </style>
 </head>
 <body>
@@ -537,7 +521,6 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <ul class="nav-links">
     <li><a href="#services"    data-i18n="nav.solutions">Solutions</a></li>
     <li><a href="#usecases"   data-i18n="nav.usecases">Use cases</a></li>
-    <li><a href="#formation" data-i18n="nav.formation">Formation</a></li>
     <li><a href="#pricing"    data-i18n="nav.pricing">Pricing</a></li>
     <li><a href="#whyus"      data-i18n="nav.about">About us</a></li>
   </ul>
@@ -558,7 +541,6 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
 <div class="nav-mobile" id="mobileMenu">
   <a href="#services"    data-i18n="nav.solutions"  onclick="closeMenu()">Solutions</a>
   <a href="#usecases"   data-i18n="nav.usecases"   onclick="closeMenu()">Use cases</a>
-  <a href="#formation" data-i18n="nav.formation" onclick="closeMenu()">Formation</a>
   <a href="#pricing"    data-i18n="nav.pricing"    onclick="closeMenu()">Pricing</a>
   <a href="#whyus"      data-i18n="nav.about"      onclick="closeMenu()">About us</a>
   <button class="nav-mobile-cta" onclick="openDemoModal();closeMenu()" data-i18n="nav.cta">Demander une démo</button>
@@ -572,15 +554,15 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
     <div class="hero-inner">
       <div>
         <h1>
-          <span class="w" data-i18n="hero.line1">Automatisez vos RH avec l'IA que vous <span class="t">utilisez déjà</span></span>
+          <span class="w" data-i18n="hero.line1">Automate your HR with the AI you <span class="t">already have</span></span>
         </h1>
-        <p class="hero-sub" data-i18n="hero.sub">Réduisez de 60% les tâches RH manuelles. Premier agent RH opérationnel en 6 semaines.</p>
+        <p class="hero-sub" data-i18n="hero.sub">AIYDOU conçoit des agents intelligents sur Gemini, Copilot ou Claude — directement dans les outils que votre entreprise utilise déjà.</p>
         <div class="hero-actions">
           <button class="btn-primary" onclick="openDemoModal()" data-i18n="hero.cta1">Démo gratuite 30 min →</button>
           <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" data-i18n="hero.cta2">Voir nos solutions</button>
         </div>
         <div class="hero-stats">
-          <div class="stat"><strong data-i18n="hero.s1v">−60%</strong><span data-i18n="hero.s1l">tâches RH manuelles</span></div>
+          <div class="stat"><strong data-i18n="hero.s1v">−65%</strong><span data-i18n="hero.s1l">tâches RH manuelles</span></div>
           <div class="stat"><strong data-i18n="hero.s2v">×3.2</strong><span data-i18n="hero.s2l">ROI en 12 mois</span></div>
           <div class="stat"><strong data-i18n="hero.s3v">6 sem.</strong><span data-i18n="hero.s3l">premier agent opérationnel</span></div>
         </div>
@@ -687,8 +669,8 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <div class="container">
     <div class="sh reveal">
       <div class="section-label" data-i18n="svc.lbl">// Nos services</div>
-      <h2 data-i18n="svc.h2">De l'audit au déploiement — en 6 semaines</h2>
-      <p class="section-sub" data-i18n="svc.sub">Un partenaire unique qui connaît les RH de l'intérieur et maîtrise l'IA en production. Pas l'un ou l'autre.</p>
+      <h2 data-i18n="svc.h2">De l'audit au déploiement, nous vous accompagnons</h2>
+      <p class="section-sub" data-i18n="svc.sub">Un partenaire unique qui comprend à la fois la réalité des RH et la technologie IA.</p>
     </div>
     <div class="svc-grid reveal">
       <div class="sc"><div class="sc-num">01</div><div><h3 data-i18n="svc.s1h">Audit & Stratégie IA</h3><p data-i18n="svc.s1p">Analyse de vos processus RH, identification des opportunités et feuille de route avec estimation du ROI.</p><div class="stags"><span class="stag" data-i18n="svc.s1t1">Diagnostic</span><span class="stag" data-i18n="svc.s1t2">Roadmap</span><span class="stag" data-i18n="svc.s1t3">Quick wins</span></div></div></div>
@@ -704,8 +686,8 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <div class="container">
     <div class="sh c reveal">
       <div class="section-label" data-i18n="uc.lbl">// Cas d'usage</div>
-      <h2 data-i18n="uc.h2">Un agent pour chaque moment critique du parcours RH</h2>
-      <p class="section-sub" data-i18n="uc.sub">Des workflows pré-configurés sur les tâches les plus chronophages. Actifs en quelques clics — sans développeur.</p>
+      <h2 data-i18n="uc.h2">Un agent pour chaque étape du parcours RH</h2>
+      <p class="section-sub" data-i18n="uc.sub">Des solutions opérationnelles couvrant l'intégralité du cycle collaborateur.</p>
     </div>
     <div class="uc-grid reveal">
       <div class="uc"><span class="uc-icon">🎯</span><h3 data-i18n="uc.u1h">Agent Recrutement</h3><ul class="uc-list"><li data-i18n="uc.u1f1">Tri & scoring automatique des CV</li><li data-i18n="uc.u1f2">Pré-qualification par chatbot</li><li data-i18n="uc.u1f3">Planification des entretiens</li><li data-i18n="uc.u1f4">Rédaction des offres d'emploi</li><li data-i18n="uc.u1f5">Rapport candidat objectif</li></ul><a class="uc-btn" href="https://aiydou.gumroad.com/l/postcraft" target="_blank" rel="noopener" data-i18n="uc.tryfree">Essayer gratuitement →</a></div>
@@ -778,77 +760,13 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
-<!-- FORMATION -->
-<section id="formation" style="background:var(--bg2);">
-  <div class="container">
-    <div class="sh c reveal">
-      <div class="section-label" data-i18n="form.lbl">// Formation IA</div>
-      <h2 data-i18n="form.h2">Vos équipes RH, formées à l'IA en 2 jours</h2>
-      <p class="section-sub" data-i18n="form.sub">Pas juste l'outil — la compétence. On forme vos équipes RH à utiliser, superviser et optimiser leurs agents IA durablement.</p>
-    </div>
-
-    <div class="prc-grid reveal" style="grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;">
-
-      <div class="plan">
-        <div style="font-size:2rem;margin-bottom:12px;">🎓</div>
-        <div class="pname" data-i18n="form.f1.title">Workshop Intensif</div>
-        <div class="ptgt" data-i18n="form.f1.sub">Présentiel ou distanciel · 2 jours</div>
-        <div class="pprice-setup" data-i18n="form.f1.price">1 900€</div>
-        <div class="pprice-recur" data-i18n="form.f1.per">par session · jusqu'à 12 participants</div>
-        <hr class="pdiv">
-        <ul class="pfeats">
-          <li data-i18n="form.f1.l1">Comprendre l'IA et les agents RH</li>
-          <li data-i18n="form.f1.l2">Superviser et corriger un agent</li>
-          <li data-i18n="form.f1.l3">Cas pratiques sur vos propres processus</li>
-          <li data-i18n="form.f1.l4">Certification AIYDOU incluse</li>
-        </ul>
-        <button class="pbtn" onclick="openFormationModal()" data-i18n="form.cta1">Réserver une session →</button>
-      </div>
-
-      <div class="plan feat" data-label-fr="Populaire" data-label-en="Popular">
-        <div style="font-size:2rem;margin-bottom:12px;">📚</div>
-        <div class="pname" data-i18n="form.f2.title">Programme E-learning</div>
-        <div class="ptgt" data-i18n="form.f2.sub">À votre rythme · accès 12 mois</div>
-        <div class="pprice-setup" data-i18n="form.f2.price">490€</div>
-        <div class="pprice-recur" data-i18n="form.f2.per">par collaborateur / an</div>
-        <hr class="pdiv">
-        <ul class="pfeats">
-          <li data-i18n="form.f2.l1">6 modules vidéo RH × IA</li>
-          <li data-i18n="form.f2.l2">Exercices pratiques guidés</li>
-          <li data-i18n="form.f2.l3">Mises à jour incluses (nouvelles lois, nouveaux LLM)</li>
-          <li data-i18n="form.f2.l4">Tableau de bord progression équipe</li>
-        </ul>
-        <button class="pbtn" onclick="openFormationModal()" data-i18n="form.cta1">Démarrer l'accès →</button>
-      </div>
-
-      <div class="plan">
-        <div style="font-size:2rem;margin-bottom:12px;">🔄</div>
-        <div class="pname" data-i18n="form.f3.title">Coaching Mensuel</div>
-        <div class="ptgt" data-i18n="form.f3.sub">Accompagnement continu · post-déploiement</div>
-        <div class="pprice-setup" data-i18n="form.f3.price">390€</div>
-        <div class="pprice-recur" data-i18n="form.f3.per">par mois · sans engagement</div>
-        <hr class="pdiv">
-        <ul class="pfeats">
-          <li data-i18n="form.f3.l1">2 sessions live par mois (1h chacune)</li>
-          <li data-i18n="form.f3.l2">Réponses illimitées par messagerie</li>
-          <li data-i18n="form.f3.l3">Revue des performances de vos agents</li>
-          <li data-i18n="form.f3.l4">Optimisations recommandées chaque mois</li>
-        </ul>
-        <button class="pbtn" onclick="openFormationModal()" data-i18n="form.cta2">Parler à un formateur →</button>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
 <!-- PRICING -->
 <section id="pricing">
   <div class="container">
     <div class="sh c reveal">
       <div class="section-label" data-i18n="pr.lbl">// Offres</div>
-      <h2 data-i18n="pr.h2">Des formules claires — déploiement inclus, ROI garanti</h2>
-      <p class="section-sub" data-i18n="pr.sub">Pas de frais cachés. Pas de surprise. L'abonnement mensuel couvre le <strong>Prompt Ops</strong> — la maintenance active de vos agents pour qu'ils restent performants.</p>
+      <h2 data-i18n="pr.h2">Des formules adaptées à chaque taille d'entreprise</h2>
+      <p class="section-sub" data-i18n="pr.sub">Déploiement inclus dans tous les plans. L'abonnement mensuel couvre le <strong>Prompt Ops</strong> — la maintenance active de vos agents.</p>
     </div>
 
     <div class="pricing-intro reveal">
@@ -869,7 +787,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
       <div class="plan">
         <div class="pname" data-i18n="pr.s">Starter</div>
         <div class="ptgt" data-i18n="pr.st">PME · jusqu'à 200 salariés</div>
-        <div class="pprice-setup" data-i18n="pr.price">3 900€</div>
+        <div class="pprice-setup" data-i18n="pr.price">2 900€</div>
         <div class="pprice-recur" data-i18n="pr.sp">one-shot déploiement · puis <strong>290€/mois</strong></div>
         <hr class="pdiv">
         <div class="tier-block">
@@ -890,14 +808,14 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
             <li data-i18n="pr.sop4">Support ticket 48h</li>
           </ul>
         </div>
-        <button class="pbtn" onclick="openDemoModal()" data-i18n="pr.btn1">Réserver mon audit gratuit →</button>
+        <button class="pbtn" onclick="openDemoModal()" data-i18n="pr.btn1">Demander un devis →</button>
       </div>
 
       <!-- BUSINESS -->
       <div class="plan feat" data-label-fr="Recommandé" data-label-en="Recommended">
         <div class="pname" data-i18n="pr.b">Business</div>
         <div class="ptgt" data-i18n="pr.bt">ETI · 200 à 2 000 salariés</div>
-        <div class="pprice-setup" data-i18n="pr.bprice">7 900€</div>
+        <div class="pprice-setup" data-i18n="pr.bprice">6 900€</div>
         <div class="pprice-recur" data-i18n="pr.bp">one-shot déploiement · puis <strong>690€/mois</strong></div>
         <hr class="pdiv">
         <div class="tier-block">
@@ -919,7 +837,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
             <li data-i18n="pr.bop5">Support prioritaire 4h (Slack/Teams)</li>
           </ul>
         </div>
-        <button class="pbtn" onclick="openDemoModal()" data-i18n="pr.btn1">Réserver mon audit gratuit →</button>
+        <button class="pbtn" onclick="openDemoModal()" data-i18n="pr.btn1">Demander un devis →</button>
       </div>
 
       <!-- ENTERPRISE -->
@@ -959,13 +877,13 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   <div class="container">
     <div class="cta-inner reveal">
       <div class="section-label" data-i18n="cta.lbl">// Passez à l'action</div>
-      <h2 data-i18n="cta.h2">Vos RH méritent mieux que des tableurs.</h2>
-      <p class="section-sub" data-i18n="cta.sub">Réservez un audit gratuit de 30 minutes. On identifie ensemble ce qu'on peut automatiser pour vous — et on vous dit combien ça vous fait gagner.</p>
+      <h2 data-i18n="cta.h2">Prêt à transformer vos Ressources Humaines ?</h2>
+      <p class="section-sub" data-i18n="cta.sub">Demandez une démo gratuite de 30 minutes. Nos experts vous montrent comment déployer votre premier agent IA dès la semaine prochaine.</p>
       <div class="cta-btns">
-        <button class="btn-primary" onclick="openDemoModal()" data-i18n="cta.btn1">Réserver mon audit gratuit →</button>
+        <button class="btn-primary" onclick="openDemoModal()" data-i18n="cta.btn1">Démo gratuite 30 min →</button>
         <button class="btn-outline" data-i18n="cta.btn2">Voir les cas clients</button>
       </div>
-      <p class="cta-note" data-i18n="cta.note">Sans engagement · Sans carte bancaire · Réponse sous 24h</p>
+      <p class="cta-note" data-i18n="cta.note">Sans engagement · Réponse sous 24h · Démo personnalisée à votre secteur</p>
     </div>
   </div>
 </section>
@@ -1035,12 +953,12 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
 const T = {
 fr: {
   "nav.problem":"Problème","nav.platforms":"Plateformes","nav.solutions":"Solutions","nav.services":"Services",
-  "nav.usecases":"Use cases","nav.formation":"Formation","nav.results":"Résultats","nav.pricing":"Pricing","nav.cta":"Demander une démo",
+  "nav.usecases":"Use cases","nav.results":"Résultats","nav.pricing":"Pricing","nav.cta":"Demander une démo",
   
   "hero.line1":"Automatisez vos RH avec l'IA que vous <span class='t'>utilisez déjà</span>",
-  "hero.sub":"Réduisez de 60% les tâches RH manuelles. Premier agent RH opérationnel en 6 semaines.",
+  "hero.sub":"AIYDOU conçoit des agents intelligents sur Gemini, Copilot ou Claude — directement dans les outils que votre entreprise utilise déjà.",
   "hero.cta1":"Démo gratuite 30 min →","hero.cta2":"Voir nos solutions",
-  "hero.s1v":"−60%","hero.s1l":"tâches RH manuelles",
+  "hero.s1v":"−65%","hero.s1l":"tâches RH manuelles",
   "hero.s2v":"×3.2","hero.s2l":"ROI en 12 mois",
   "hero.s3v":"6 sem.","hero.s3l":"premier agent opérationnel",
   "term.l1":"// DRH Nexora",
@@ -1137,12 +1055,12 @@ fr: {
 
 
 
-  "svc.lbl":"// Nos services","svc.h2":"De l'audit au déploiement — en 6 semaines","svc.sub":"Un partenaire unique qui connaît les RH de l'intérieur et maîtrise l'IA en production. Pas l'un ou l'autre.",
+  "svc.lbl":"// Nos services","svc.h2":"De l'audit au déploiement, nous vous accompagnons","svc.sub":"Un partenaire unique qui comprend à la fois la réalité des RH et la technologie IA.",
   "svc.s1h":"Audit & Stratégie IA","svc.s1p":"Analyse de vos processus RH, identification des opportunités et feuille de route avec estimation du ROI.","svc.s1t1":"Diagnostic","svc.s1t2":"Roadmap","svc.s1t3":"Quick wins",
   "svc.s2h":"Conception d'Agents IA","svc.s2p":"Développement d'agents sur mesure : recrutement, onboarding, performance, formation et gestion des talents.","svc.s2t1":"LLM sur mesure","svc.s2t2":"Workflows IA","svc.s2t3":"RAG RH",
   "svc.s3h":"Intégration & Déploiement","svc.s3p":"Connexion à vos SIRH, déploiement cloud sécurisé, tests et mise en production accompagnée.","svc.s3t1":"API SIRH","svc.s3t2":"RGPD","svc.s3t3":"Cloud sécurisé",
   "svc.s4h":"Formation & Accompagnement","svc.s4p":"Conduite du changement, formation équipes RH, support dédié et amélioration continue des modèles.","svc.s4t1":"Change mgmt","svc.s4t2":"Formation","svc.s4t3":"Support",
-  "uc.lbl":"// Cas d'usage","uc.h2":"Un agent pour chaque moment critique du parcours RH","uc.sub":"Des workflows pré-configurés sur les tâches les plus chronophages. Actifs en quelques clics — sans développeur.",
+  "uc.lbl":"// Cas d'usage","uc.h2":"Un agent pour chaque étape du parcours RH","uc.sub":"Des solutions opérationnelles couvrant l'intégralité du cycle collaborateur.",
   "uc.u1h":"Agent Recrutement","uc.u1f1":"Tri & scoring automatique des CV","uc.u1f2":"Pré-qualification par chatbot","uc.u1f3":"Planification des entretiens","uc.u1f4":"Rédaction des offres d'emploi","uc.u1f5":"Rapport candidat objectif",
   "uc.u2h":"Agent Onboarding","uc.u2f1":"Parcours d'intégration J1 auto","uc.u2f2":"Formation interactive IA","uc.u2f3":"Suivi 30 / 60 / 90 jours","uc.u2f4":"Admin documentaire automatisée","uc.u2f5":"Feedback continu newjoiner",
   "uc.u3h":"Agent Performance","uc.u3f1":"OKRs automatisés & suivis","uc.u3f2":"Feedback 360° IA-assisté","uc.u3f3":"Détection risque de départ","uc.u3f4":"Plan de développement auto","uc.u3f5":"Rapport analytique DRH",
@@ -1161,42 +1079,33 @@ fr: {
   "w.w1h":"Experts RH × IA","w.w1p":"Équipe hybride unique : DRH expérimentés et ingénieurs IA de pointe.","w.w2h":"Données sécurisées","w.w2p":"Hébergement souverain européen, RGPD garanti, aucune donnée partagée avec des tiers.",
   "w.w3h":"ROI en 3 mois","w.w3p":"Premier agent opérationnel en 6 semaines. ROI mesurable dès le 3e mois.","w.w4h":"Zero vendor lock-in","w.w4p":"Construit sur votre plateforme existante. Vous gardez le contrôle total.",
   "w.w5h":"Accompagnement continu","w.w5p":"CSM dédié, revues mensuelles, optimisation et formation équipes inclus.","w.w6h":"Multilingue & international","w.w6p":"Agents en 12 langues, conformité locale, déploiement multi-pays centralisé.",
-  "form.lbl":"// Formation IA","form.h2":"Vos équipes RH, formées à l'IA en 2 jours","form.sub":"Pas juste l'outil — la compétence. On forme vos équipes RH à utiliser, superviser et optimiser leurs agents IA durablement.",
-  "form.f1.title":"Workshop Intensif","form.f1.sub":"Présentiel ou distanciel · 2 jours","form.f1.price":"1 900€","form.f1.per":"par session · jusqu'à 12 participants",
-  "form.f1.l1":"Comprendre l'IA et les agents RH","form.f1.l2":"Superviser et corriger un agent","form.f1.l3":"Cas pratiques sur vos propres processus","form.f1.l4":"Certification AIYDOU incluse",
-  "form.f2.title":"Programme E-learning","form.f2.sub":"À votre rythme · accès 12 mois","form.f2.price":"490€","form.f2.per":"par collaborateur / an",
-  "form.f2.l1":"6 modules vidéo RH × IA","form.f2.l2":"Exercices pratiques guidés","form.f2.l3":"Mises à jour incluses (nouvelles lois, nouveaux LLM)","form.f2.l4":"Tableau de bord progression équipe",
-  "form.f3.title":"Coaching Mensuel","form.f3.sub":"Accompagnement continu · post-déploiement","form.f3.price":"390€","form.f3.per":"par mois · sans engagement",
-  "form.f3.l1":"2 sessions live par mois (1h chacune)","form.f3.l2":"Réponses illimitées par messagerie","form.f3.l3":"Revue des performances de vos agents","form.f3.l4":"Optimisations recommandées chaque mois",
-  "form.cta1":"Réserver une session →","form.cta2":"Parler à un formateur →",
-  "form.note":"Formation éligible OPCO · Prise en charge possible jusqu'à 100%","form.link":"Voir le programme complet →",
-  "pr.lbl":"// Offres","pr.sub":"Pas de frais cachés. Pas de surprise. L'abonnement mensuel couvre le <strong>Prompt Ops</strong> — la maintenance active de vos agents pour qu'ils restent performants.",
+  "pr.lbl":"// Offres","pr.h2":"Des formules adaptées à chaque taille d'entreprise","pr.sub":"Déploiement inclus dans tous les plans. L'abonnement mensuel couvre le <strong>Prompt Ops</strong> — la maintenance active de vos agents.",
   "pr.why.lbl":"// Pourquoi un abonnement mensuel ?","pr.why.h":"Un agent RH n'est pas un logiciel qu'on installe une fois","pr.why.p":"Vos instructions évoluent avec votre entreprise : nouvelle législation, changement de SIRH, politique interne révisée, mise à jour du modèle LLM. Sans maintenance, un agent dérive et produit des réponses incorrectes.",
   "pr.ops.title":"⚙ Le Prompt Ops AIYDOU","pr.ops.p":"Nous maintenons les instructions de vos agents à jour en continu — révisions de prompts, compatibilité LLM garantie sur chaque nouvelle version (Gemini, Copilot, Claude), veille réglementaire RH, et monitoring comportemental pour détecter les dérives avant vos équipes.",
   "pr.tier.deploy":"Déploiement inclus","pr.tier.ops":"Prompt Ops mensuel",
-  "pr.s":"Starter","pr.st":"PME · jusqu'à 200 salariés","pr.price":"3 900€","pr.sp":"one-shot déploiement · puis <strong>290€/mois</strong>",
+  "pr.s":"Starter","pr.st":"PME · jusqu'à 200 salariés","pr.price":"2 900€","pr.sp":"one-shot déploiement · puis <strong>290€/mois</strong>",
   "pr.sf1":"1 Agent Onboarding IA","pr.sf2":"Connexion outils existants (Drive, SharePoint, etc)","pr.sf3":"Formation équipe (1 jour)",
   "pr.audit":"✅ Audit RH offert inclus","pr.sop1":"1 révision de prompt/mois","pr.sop2":"Compatibilité LLM garantie","pr.sop3":"Monitoring comportemental","pr.sop4":"Support ticket 48h",
-  "pr.b":"Business","pr.bt":"ETI · 200 à 2 000 salariés","pr.bprice":"7 900€","pr.bp":"one-shot déploiement · puis <strong>690€/mois</strong>",
+  "pr.b":"Business","pr.bt":"ETI · 200 à 2 000 salariés","pr.bprice":"6 900€","pr.bp":"one-shot déploiement · puis <strong>690€/mois</strong>",
   "pr.bf1":"3 Agents IA personnalisés","pr.bf2":"Connexion jusqu'à 3 sources de données internes","pr.bf3":"Formation complète équipes",
   "pr.bop1":"4 révisions prompt/mois (1 par agent)","pr.bop2":"Veille réglementaire RH incluse","pr.bop3":"A/B testing des instructions","pr.bop4":"Revue mensuelle CSM · 30 min","pr.bop5":"Support prioritaire 4h (Slack/Teams)",
   "pr.e":"Enterprise","pr.et":"Grands groupes · 2 000+ salariés","pr.eprice":"Sur devis","pr.erecur":"à partir de <strong>1 200€/mois</strong>",
   "pr.ef1":"Agents IA illimités","pr.ef2":"Architecture sur mesure","pr.ef3":"Intégrations sur mesure",
   "pr.eop1":"Révisions illimitées","pr.eop2":"Ingénieur Prompt Ops dédié","pr.eop3":"Changelog versionné des instructions","pr.eop4":"SLA comportemental garanti","pr.eop5":"Hébergement on-premise possible",
-  "pr.btn1":"Réserver mon audit gratuit →","pr.btn2":"Parler à l'équipe →",
-  "cta.lbl":"// Passez à l'action","cta.h2":"Vos RH méritent mieux que des tableurs.",
-  "cta.sub":"Réservez un audit gratuit de 30 minutes. On identifie ensemble ce qu'on peut automatiser pour vous — et on vous dit combien ça vous fait gagner.",
-  "cta.btn1":"Réserver mon audit gratuit →","cta.btn2":"Voir les cas clients","cta.note":"Sans engagement · Sans carte bancaire · Réponse sous 24h",
+  "pr.btn1":"Demander un devis →","pr.btn2":"Contacter l'équipe →",
+  "cta.lbl":"// Passez à l'action","cta.h2":"Prêt à transformer vos Ressources Humaines ?",
+  "cta.sub":"Demandez une démo gratuite de 30 minutes. Nos experts vous montrent comment déployer votre premier agent IA dès la semaine prochaine.",
+  "cta.btn1":"Démo gratuite 30 min →","cta.btn2":"Voir les cas clients","cta.note":"Sans engagement · Réponse sous 24h · Démo personnalisée à votre secteur",
   "f.about":"À propos","f.blog":"Blog","f.legal":"Mentions légales","f.privacy":"Confidentialité","f.contact":"Contact","f.copy":"© 2025 AIYDOU · connect@aiydou.com"
 },
 en: {
   "nav.problem":"Problem","nav.platforms":"Platforms","nav.solutions":"Solutions","nav.services":"Services",
-  "nav.usecases":"Use Cases","nav.formation":"Training","nav.results":"Results","nav.pricing":"Pricing","nav.about":"About us","nav.cta":"Book a Demo",
+  "nav.usecases":"Use Cases","nav.results":"Results","nav.pricing":"Pricing","nav.about":"About us","nav.cta":"Book a Demo",
   
   "hero.line1":"Automate your HR with the AI you <span class='t'>already have</span>",
-  "hero.sub":"Cut manual HR tasks by 60%. First HR agent live in 6 weeks.",
+  "hero.sub":"AIYDOU builds intelligent agents on Gemini, Copilot or Claude — directly inside the tools your company already uses.",
   "hero.cta1":"Free 30-min Demo →","hero.cta2":"Explore Solutions",
-  "hero.s1v":"−60%","hero.s1l":"manual HR tasks",
+  "hero.s1v":"−65%","hero.s1l":"manual HR tasks",
   "hero.s2v":"×3.2","hero.s2l":"ROI in 12 months",
   "hero.s3v":"6 wks","hero.s3l":"first agent live",
   "term.l1":"// DRH Nexora",
@@ -1293,12 +1202,12 @@ en: {
 
 
 
-  "svc.lbl":"// Our Services","svc.h2":"From audit to deployment — in 6 weeks","svc.sub":"A unique partner who knows HR from the inside and masters AI in production. Not one or the other.",
+  "svc.lbl":"// Our Services","svc.h2":"From audit to deployment, we guide you every step","svc.sub":"A unique partner who understands both HR realities and AI technology.",
   "svc.s1h":"AI Audit & Strategy","svc.s1p":"Analysis of your HR processes, automation opportunities and a roadmap with ROI estimation.","svc.s1t1":"Diagnosis","svc.s1t2":"Roadmap","svc.s1t3":"Quick wins",
   "svc.s2h":"AI Agent Design","svc.s2p":"Custom agent development: recruitment, onboarding, performance, training and talent management.","svc.s2t1":"Custom LLM","svc.s2t2":"AI Workflows","svc.s2t3":"HR RAG",
   "svc.s3h":"Integration & Deployment","svc.s3p":"Connection to your HRIS, secure cloud deployment, user testing and go-live support.","svc.s3t1":"HRIS API","svc.s3t2":"GDPR","svc.s3t3":"Secure cloud",
   "svc.s4h":"Training & Support","svc.s4p":"Change management, HR team training, dedicated support and continuous model improvement.","svc.s4t1":"Change mgmt","svc.s4t2":"Training","svc.s4t3":"Support",
-  "uc.lbl":"// Use Cases","uc.h2":"An agent for every critical HR moment","uc.sub":"Pre-configured workflows for your most time-consuming tasks. Live in a few clicks — no developer needed.",
+  "uc.lbl":"// Use Cases","uc.h2":"An agent for every step of the HR journey","uc.sub":"Operational solutions covering the entire employee lifecycle.",
   "uc.u1h":"Recruitment Agent","uc.u1f1":"Automatic CV scoring & filtering","uc.u1f2":"Chatbot pre-qualification","uc.u1f3":"Interview scheduling","uc.u1f4":"Job posting generation","uc.u1f5":"Objective candidate report",
   "uc.u2h":"Onboarding Agent","uc.u2f1":"Automated day-1 integration path","uc.u2f2":"Interactive AI training","uc.u2f3":"30 / 60 / 90-day check-ins","uc.u2f4":"Automated document admin","uc.u2f5":"Continuous new-joiner feedback",
   "uc.u3h":"Performance Agent","uc.u3f1":"Automated OKRs & tracking","uc.u3f2":"AI-assisted 360° feedback","uc.u3f3":"Flight risk detection","uc.u3f4":"Auto development plans","uc.u3f5":"CHRO analytics report",
@@ -1320,32 +1229,23 @@ en: {
   "w.w4h":"Zero vendor lock-in","w.w4p":"Built on your existing platform. You keep full control — no vendor lock-in.",
   "w.w5h":"Continuous support","w.w5p":"Dedicated CSM, monthly reviews, model optimisation and team training included.",
   "w.w6h":"Multilingual & global","w.w6p":"Agents in 12 languages, local regulatory compliance, centralised multi-country deployment.",
-  "form.lbl":"// AI Training","form.h2":"Your HR team, AI-trained in 2 days","form.sub":"Not just the tool — the skill. We train your HR teams to use, supervise and optimise their AI agents for the long run.",
-  "form.f1.title":"Intensive Workshop","form.f1.sub":"On-site or remote · 2 days","form.f1.price":"€1,900","form.f1.per":"per session · up to 12 participants",
-  "form.f1.l1":"Understanding AI and HR agents","form.f1.l2":"Supervising and correcting an agent","form.f1.l3":"Hands-on with your own processes","form.f1.l4":"AIYDOU certification included",
-  "form.f2.title":"E-learning Programme","form.f2.sub":"At your own pace · 12-month access","form.f2.price":"€490","form.f2.per":"per employee / year",
-  "form.f2.l1":"6 video modules HR × AI","form.f2.l2":"Guided practical exercises","form.f2.l3":"Updates included (new laws, new LLMs)","form.f2.l4":"Team progress dashboard",
-  "form.f3.title":"Monthly Coaching","form.f3.sub":"Ongoing support · post-deployment","form.f3.price":"€390","form.f3.per":"per month · no commitment",
-  "form.f3.l1":"2 live sessions per month (1h each)","form.f3.l2":"Unlimited messaging support","form.f3.l3":"Agent performance review","form.f3.l4":"Monthly optimisation recommendations",
-  "form.cta1":"Book a session →","form.cta2":"Talk to a trainer →",
-  "form.note":"CPD-eligible training · Up to 100% funding available","form.link":"See the full programme →",
-  "pr.lbl":"// Pricing","pr.h2":"Clear pricing — deployment included, ROI guaranteed","pr.sub":"No hidden fees. No surprises. The monthly subscription covers <strong>Prompt Ops</strong> — the active maintenance of your agents so they stay sharp.",
+  "pr.lbl":"// Pricing","pr.h2":"Plans tailored to every company size","pr.sub":"Deployment included in all plans. The monthly subscription covers <strong>Prompt Ops</strong> — the active maintenance of your agents.",
   "pr.why.lbl":"// Why a monthly subscription?","pr.why.h":"An HR agent isn't software you install once","pr.why.p":"Your instructions evolve with your company: new legislation, HRIS changes, revised internal policies, LLM model updates. Without maintenance, an agent drifts and produces incorrect responses.",
   "pr.ops.title":"⚙ AIYDOU Prompt Ops","pr.ops.p":"We keep your agents' instructions up to date continuously — prompt revisions, guaranteed LLM compatibility on every new version (Gemini, Copilot, Claude), HR regulatory monitoring, and behavioural monitoring to detect drift before your teams do.",
   "pr.tier.deploy":"Deployment included","pr.tier.ops":"Monthly Prompt Ops",
-  "pr.s":"Starter","pr.st":"SMB · up to 200 employees","pr.price":"€3,900","pr.sp":"one-shot deployment · then <strong>€290/mo</strong>",
+  "pr.s":"Starter","pr.st":"SMB · up to 200 employees","pr.price":"€2,900","pr.sp":"one-shot deployment · then <strong>€290/mo</strong>",
   "pr.sf1":"1 AI Onboarding Agent","pr.sf2":"Connection to existing tools (Drive, SharePoint, etc)","pr.sf3":"Team training (1 day)",
   "pr.audit":"✅ HR Audit included","pr.sop1":"1 prompt revision/month","pr.sop2":"LLM compatibility guaranteed","pr.sop3":"Behavioural monitoring","pr.sop4":"Ticket support 48h",
-  "pr.b":"Business","pr.bt":"Mid-market · 200–2,000 employees","pr.bprice":"€7,900","pr.bp":"one-shot deployment · then <strong>€690/mo</strong>",
+  "pr.b":"Business","pr.bt":"Mid-market · 200–2,000 employees","pr.bprice":"€6,900","pr.bp":"one-shot deployment · then <strong>€690/mo</strong>",
   "pr.bf1":"3 custom AI Agents","pr.bf2":"Connection to up to 3 internal data sources","pr.bf3":"Full team training",
   "pr.bop1":"4 prompt revisions/month (1 per agent)","pr.bop2":"HR regulatory monitoring included","pr.bop3":"A/B testing of instructions","pr.bop4":"Monthly CSM review · 30 min","pr.bop5":"Priority support 4h (Slack/Teams)",
   "pr.e":"Enterprise","pr.et":"Large corps · 2,000+ employees","pr.eprice":"Custom quote","pr.erecur":"from <strong>€1,200/mo</strong>",
   "pr.ef1":"Unlimited AI Agents","pr.ef2":"Bespoke architecture","pr.ef3":"Custom integrations",
   "pr.eop1":"Unlimited revisions","pr.eop2":"Dedicated Prompt Ops engineer","pr.eop3":"Versioned instruction changelog","pr.eop4":"Behavioural SLA guaranteed","pr.eop5":"On-premise hosting available",
-  "pr.btn1":"Book my free audit →","pr.btn2":"Talk to our team →",
-  "cta.lbl":"// Get Started","cta.h2":"Your HR team deserves better than spreadsheets.",
-  "cta.sub":"Book a free 30-minute audit. We'll identify together what we can automate for you — and tell you exactly what you'll gain.",
-  "cta.btn1":"Book my free audit →","cta.btn2":"See client cases","cta.note":"No commitment · No credit card · Reply within 24h",
+  "pr.btn1":"Get a quote →","pr.btn2":"Talk to our team →",
+  "cta.lbl":"// Get Started","cta.h2":"Ready to transform your HR?",
+  "cta.sub":"Book a free 30-minute demo. Our experts will show you how to deploy your first AI agent as early as next week.",
+  "cta.btn1":"Free 30-min Demo →","cta.btn2":"See client cases","cta.note":"No commitment · Reply within 24h · Demo tailored to your industry",
   "f.about":"About","f.blog":"Blog","f.legal":"Legal","f.privacy":"Privacy","f.contact":"Contact","f.copy":"© 2025 AIYDOU · connect@aiydou.com"
 }};
 
@@ -1364,8 +1264,8 @@ function setLang(l) {
   });
   if(window._termPlay) window._termPlay();
   document.title = l === 'fr'
-    ? 'AIYDOU — Automatisez vos RH avec l\'IA que vous utilisez déjà'
-    : 'AIYDOU — Automate your HR with the AI you already have';
+    ? 'AIYDOU — Automatisez vos RH avec l\'Intelligence Artificielle'
+    : 'AIYDOU — Automate Your HR with Artificial Intelligence';
 }
 
 function toggleMenu() {
@@ -1443,19 +1343,31 @@ function submitDemo(){
   const job=document.getElementById('dm-job').value.trim();
   const company=document.getElementById('dm-company').value.trim();
   if(!fname||!email){alert('Veuillez renseigner votre prénom et email.');return;}
-  const fd=new FormData();
-  fd.append('access_key','cc101d20-2438-4ed5-9c60-fb91819eae7b');
-  fd.append('subject','Nouvelle demande de démo - AIYDOU');
-  fd.append('from_name','AIYDOU Site');
-  fd.append('email',email);
-  fd.append('message',`Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}`);
-  fetch('https://api.web3forms.com/submit',{method:'POST',body:fd})
-    .then(r=>r.json())
-    .then(()=>{
+
+  // Send email via Web3Forms (free, no backend needed)
+  const formData = new FormData();
+  formData.append('access_key', 'cc101d20-2438-4ed5-9c60-fb91819eae7b');
+  formData.append('to', 'connect@aiydou.com');
+  formData.append('subject', 'Nouvelle demande de démo - AIYDOU');
+  formData.append('from_name', 'AIYDOU Site');
+  formData.append('message',
+    `Nouvelle demande de démo:\n\n` +
+    `Prénom: ${fname}\n` +
+    `Nom: ${lname}\n` +
+    `Email: ${email}\n` +
+    `Poste: ${job}\n` +
+    `Entreprise: ${company}`
+  );
+  formData.append('email', email);
+
+  fetch('https://api.web3forms.com/submit', { method:'POST', body: formData })
+    .then(r => r.json())
+    .then(data => {
       document.getElementById('demoForm').style.display='none';
       document.getElementById('demoSuccess').style.display='block';
     })
-    .catch(()=>{
+    .catch(() => {
+      // Fallback: still show success
       document.getElementById('demoForm').style.display='none';
       document.getElementById('demoSuccess').style.display='block';
     });
@@ -1480,91 +1392,8 @@ function applyDemoLang(){
   sel.innerHTML=sizes.map((s,i)=>`<option value="" ${i===0?'disabled selected':''}>${s}</option>`).join('');
 }
 
-function openFormationModal(){
-  document.getElementById('formationOverlay').style.display='flex';
-  document.body.style.overflow='hidden';
-}
-function closeFormationModal(){
-  document.getElementById('formationOverlay').style.display='none';
-  document.body.style.overflow='';
-}
-function submitFormation(){
-  const fname=document.getElementById('fm-fname').value.trim();
-  const lname=document.getElementById('fm-lname')?document.getElementById('fm-lname').value.trim():'';
-  const email=document.getElementById('fm-email').value.trim();
-  const job=document.getElementById('fm-job')?document.getElementById('fm-job').value.trim():'';
-  const company=document.getElementById('fm-company')?document.getElementById('fm-company').value.trim():'';
-  const format=document.getElementById('fm-format')?document.getElementById('fm-format').value:'';
-  const size=document.getElementById('fm-size')?document.getElementById('fm-size').value:'';
-  if(!fname||!email){alert(lang==='fr'?'Veuillez remplir les champs obligatoires.':'Please fill in the required fields.');return;}
-  const ff=new FormData();
-  ff.append('access_key','cc101d20-2438-4ed5-9c60-fb91819eae7b');
-  ff.append('subject','Nouvelle demande de formation - AIYDOU');
-  ff.append('from_name','AIYDOU Formation');
-  ff.append('email',email);
-  ff.append('message',`Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}\nProgramme: ${format}\nTaille équipe: ${size}`);
-  fetch('https://api.web3forms.com/submit',{method:'POST',body:ff})
-    .then(r=>r.json())
-    .then(()=>{
-      document.getElementById('formationForm').style.display='none';
-      document.getElementById('formationSuccess').style.display='block';
-    })
-    .catch(()=>{
-      document.getElementById('formationForm').style.display='none';
-      document.getElementById('formationSuccess').style.display='block';
-    });
-}
-
 </script>
 
-
-<!-- FORMATION MODAL -->
-<div class="demo-overlay" id="formationOverlay" onclick="if(event.target===this)closeFormationModal()" style="display:none;">
-  <div class="demo-modal">
-    <button class="demo-close" onclick="closeFormationModal()" aria-label="Close">✕</button>
-    <div class="demo-head">
-      <div class="demo-head-icon">🎓</div>
-      <h2 id="fm-title">Réserver votre programme de formation</h2>
-    </div>
-
-    <div style="background:var(--bg2,#f8f9fb);border-radius:10px;padding:16px 18px;margin-bottom:20px;border-left:3px solid var(--teal,#2563eb);">
-      <div style="font-weight:700;font-size:0.9rem;margin-bottom:6px;">👨‍🏫 Votre formateur</div>
-      <p style="font-size:0.85rem;color:#374151;line-height:1.6;margin:0;">Formation dispensée par un <strong>expert RH & IA avec 17 ans d'expérience</strong> — ancien DRH, praticien de l'intelligence artificielle appliquée aux ressources humaines. Pas de théorie creuse : des méthodes issues du terrain, testées dans des organisations de toutes tailles.</p>
-    </div>
-
-    <div class="demo-form" id="formationForm">
-      <div class="demo-row">
-        <input class="demo-input" type="text" id="fm-fname" placeholder="Prénom *" required/>
-        <input class="demo-input" type="text" id="fm-lname" placeholder="Nom *" required/>
-      </div>
-      <input class="demo-input" type="email" id="fm-email" placeholder="Email professionnel *" required/>
-      <input class="demo-input" type="text" id="fm-job" placeholder="Titre du poste"/>
-      <input class="demo-input" type="text" id="fm-company" placeholder="Nom de l'entreprise"/>
-      <select class="demo-select" id="fm-format">
-        <option value="" disabled selected>Quel programme vous intéresse ?</option>
-        <option>🎓 Workshop Intensif — 2 jours (1 900€)</option>
-        <option>📚 Programme E-learning — 6 modules (490€/pers)</option>
-        <option>🔄 Coaching Mensuel (390€/mois)</option>
-        <option>Je veux être conseillé(e)</option>
-      </select>
-      <select class="demo-select" id="fm-size">
-        <option value="" disabled selected>Taille de votre équipe RH</option>
-        <option>1–5 personnes</option>
-        <option>5–15 personnes</option>
-        <option>15–50 personnes</option>
-        <option>50+ personnes</option>
-      </select>
-      <button class="demo-submit" id="fm-btn" onclick="submitFormation()">Réserver ma formation →</button>
-      <div class="demo-note" id="fm-note">Sans engagement · Réponse sous 24h · Financement OPCO possible</div>
-    </div>
-
-    <div class="demo-success" id="formationSuccess" style="display:none;">
-      <div style="font-size:3rem;margin-bottom:12px">🎉</div>
-      <h3>Demande reçue !</h3>
-      <p>Notre expert vous contactera sous 24h pour finaliser votre programme et étudier les options de financement OPCO.</p>
-    </div>
-  </div>
-</div>
 
 
 <!-- DEMO MODAL -->
