@@ -337,6 +337,14 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
 
 /* ── MOBILE 600px — iPhone & Android ── */
 @media(max-width:600px){
+  /* Fix horizontal overflow - formation page grids */
+  .prc-grid{grid-template-columns:1fr !important;}
+  [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important;}
+  [style*="grid-template-columns: repeat(3"]{grid-template-columns:1fr !important;}
+  [style*="repeat(4,1fr)"]{grid-template-columns:1fr 1fr !important;}
+  [style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr !important;}
+  .container{padding:0 4% !important;overflow-x:hidden;}
+  section{overflow-x:hidden;}
   html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   *{max-width:100%;box-sizing:border-box}
   body{overflow-x:hidden;-webkit-overflow-scrolling:touch}
@@ -505,6 +513,24 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
 @media(max-width:480px){
   .demo-row,.demo-phone-row{grid-template-columns:1fr}
   .demo-modal{padding:24px 20px}
+}
+
+/* ── FORMATION MOBILE FIXES ── */
+@media(max-width:600px){
+  /* Stats row 4-col → 2-col */
+  div[style*="grid-template-columns:repeat(4,1fr)"],
+  div[style*="grid-template-columns: repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Who grid 3-col → 1-col */
+  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns: repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Prevent any grid from overflowing */
+  .prc-grid { grid-template-columns: 1fr !important; }
+  /* Remove horizontal scroll */
+  html, body { overflow-x: hidden !important; max-width: 100vw; }
 }
 </style>
 
@@ -1245,6 +1271,15 @@ en: {
 }};
 
 let lang = 'fr';
+// Auto-detect lang from URL param (?lang=en) or path (/training/)
+(function(){
+  const p = new URLSearchParams(window.location.search).get('lang');
+  const path = window.location.pathname;
+  if(p === 'en' || path.indexOf('/training') !== -1) {
+    lang = 'en';
+    document.documentElement.lang = 'en';
+  }
+})();
 
 function setLang(l) {
   lang = l;
@@ -1308,6 +1343,8 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// Apply language on load
+if(lang === 'en') setLang('en');
 
 // Active nav
 const secs = [...document.querySelectorAll('section[id]')];
@@ -1396,10 +1433,29 @@ function closeFormationModal(){
 }
 function submitFormation(){
   const fname=document.getElementById('fm-fname').value.trim();
+  const lname=document.getElementById('fm-lname')?document.getElementById('fm-lname').value.trim():'';
   const email=document.getElementById('fm-email').value.trim();
+  const job=document.getElementById('fm-job')?document.getElementById('fm-job').value.trim():'';
+  const company=document.getElementById('fm-company')?document.getElementById('fm-company').value.trim():'';
+  const format=document.getElementById('fm-format')?document.getElementById('fm-format').value:'';
+  const size=document.getElementById('fm-size')?document.getElementById('fm-size').value:'';
   if(!fname||!email){alert(lang==='fr'?'Veuillez remplir les champs obligatoires.':'Please fill in the required fields.');return;}
-  document.getElementById('formationForm').style.display='none';
-  document.getElementById('formationSuccess').style.display='block';
+  const ff=new FormData();
+  ff.append('access_key','cc101d20-2438-4ed5-9c60-fb91819eae7b');
+  ff.append('subject','Nouvelle demande de formation - AIYDOU');
+  ff.append('from_name','AIYDOU Formation');
+  ff.append('email',email);
+  ff.append('message',`Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}\nProgramme: ${format}\nTaille équipe: ${size}`);
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:ff})
+    .then(r=>r.json())
+    .then(()=>{
+      document.getElementById('formationForm').style.display='none';
+      document.getElementById('formationSuccess').style.display='block';
+    })
+    .catch(()=>{
+      document.getElementById('formationForm').style.display='none';
+      document.getElementById('formationSuccess').style.display='block';
+    });
 }
 </script>
 
