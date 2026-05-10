@@ -1481,6 +1481,41 @@ function applyDemoLang(){
   sel.innerHTML=sizes.map((s,i)=>`<option value="" ${i===0?'disabled selected':''}>${s}</option>`).join('');
 }
 
+
+function openFormationModal(){
+  document.getElementById('formationOverlay').style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeFormationModal(){
+  document.getElementById('formationOverlay').style.display='none';
+  document.body.style.overflow='';
+}
+function submitFormation(){
+  const fname=document.getElementById('fm-fname').value.trim();
+  const lname=document.getElementById('fm-lname')?document.getElementById('fm-lname').value.trim():'';
+  const email=document.getElementById('fm-email').value.trim();
+  const job=document.getElementById('fm-job')?document.getElementById('fm-job').value.trim():'';
+  const company=document.getElementById('fm-company')?document.getElementById('fm-company').value.trim():'';
+  const format=document.getElementById('fm-format')?document.getElementById('fm-format').value:'';
+  const size=document.getElementById('fm-size')?document.getElementById('fm-size').value:'';
+  if(!fname||!email){alert(lang==='fr'?'Veuillez remplir les champs obligatoires.':'Please fill in the required fields.');return;}
+  const ff=new FormData();
+  ff.append('access_key','cc101d20-2438-4ed5-9c60-fb91819eae7b');
+  ff.append('subject','Nouvelle demande de formation - AIYDOU');
+  ff.append('from_name','AIYDOU Formation');
+  ff.append('email',email);
+  ff.append('message',`Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}\nProgramme: ${format}\nTaille équipe: ${size}`);
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:ff})
+    .then(r=>r.json())
+    .then(()=>{
+      document.getElementById('formationForm').style.display='none';
+      document.getElementById('formationSuccess').style.display='block';
+    })
+    .catch(()=>{
+      document.getElementById('formationForm').style.display='none';
+      document.getElementById('formationSuccess').style.display='block';
+    });
+}
 </script>
 
 
@@ -1534,5 +1569,103 @@ function applyDemoLang(){
   </div>
 </div>
 
+<!-- FORMATION MODAL -->
+<div class="demo-overlay" id="formationOverlay" onclick="if(event.target===this)closeFormationModal()" style="display:none;">
+  <div class="demo-modal">
+    <button class="demo-close" onclick="closeFormationModal()" aria-label="Close">✕</button>
+    <div class="demo-head">
+      <div class="demo-head-icon">🎓</div>
+      <h2 id="fm-title">Réserver votre programme de formation</h2>
+    </div>
+
+    <div style="background:var(--bg2,#f8f9fb);border-radius:10px;padding:16px 18px;margin-bottom:20px;border-left:3px solid var(--teal,#2563eb);">
+      <div style="font-weight:700;font-size:0.9rem;margin-bottom:6px;">👨‍🏫 Votre formateur</div>
+      <p style="font-size:0.85rem;color:#374151;line-height:1.6;margin:0;">Formation dispensée par un <strong>expert RH & IA avec 17 ans d'expérience</strong> — ancien DRH, praticien de l'intelligence artificielle appliquée aux ressources humaines. Pas de théorie creuse : des méthodes issues du terrain, testées dans des organisations de toutes tailles.</p>
+    </div>
+
+    <div class="demo-form" id="formationForm">
+      <div class="demo-row">
+        <input class="demo-input" type="text" id="fm-fname" placeholder="Prénom *" required/>
+        <input class="demo-input" type="text" id="fm-lname" placeholder="Nom *" required/>
+      </div>
+      <input class="demo-input" type="email" id="fm-email" placeholder="Email professionnel *" required/>
+      <input class="demo-input" type="text" id="fm-job" placeholder="Titre du poste"/>
+      <input class="demo-input" type="text" id="fm-company" placeholder="Nom de l'entreprise"/>
+      <select class="demo-select" id="fm-format">
+        <option value="" disabled selected>Quel programme vous intéresse ?</option>
+        <option>🎓 Workshop Intensif — 2 jours (1 900€)</option>
+        <option>📚 Programme E-learning — 6 modules (490€/pers)</option>
+        <option>🔄 Coaching Mensuel (390€/mois)</option>
+        <option>Je veux être conseillé(e)</option>
+      </select>
+      <select class="demo-select" id="fm-size">
+        <option value="" disabled selected>Taille de votre équipe RH</option>
+        <option>1–5 personnes</option>
+        <option>5–15 personnes</option>
+        <option>15–50 personnes</option>
+        <option>50+ personnes</option>
+      </select>
+      <button class="demo-submit" id="fm-btn" onclick="submitFormation()">Réserver ma formation →</button>
+      <div class="demo-note" id="fm-note">Sans engagement · Réponse sous 24h · Financement OPCO possible</div>
+    </div>
+
+    <div class="demo-success" id="formationSuccess" style="display:none;">
+      <div style="font-size:3rem;margin-bottom:12px">🎉</div>
+      <h3>Demande reçue !</h3>
+      <p>Notre expert vous contactera sous 24h pour finaliser votre programme et étudier les options de financement OPCO.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- DEMO MODAL -->
+<div class="demo-overlay" id="demoOverlay" onclick="if(event.target===this)closeDemoModal()">
+  <div class="demo-modal">
+    <button class="demo-close" onclick="closeDemoModal()" aria-label="Close">✕</button>
+    <div class="demo-head">
+      <div class="demo-head-icon">🤝</div>
+      <h2 id="dm-title">Planifier une démo de 30 minutes</h2>
+    </div>
+    <div class="demo-form" id="demoForm">
+      <div class="demo-row">
+        <input class="demo-input" type="text" id="dm-fname" placeholder="Prénom" required/>
+        <input class="demo-input" type="text" id="dm-lname" placeholder="Nom" required/>
+      </div>
+      <input class="demo-input" type="email" id="dm-email" placeholder="Email professionnel" required/>
+      <input class="demo-input" type="text" id="dm-job" placeholder="Titre du poste"/>
+      <div class="demo-phone-row">
+        <select class="demo-select" id="dm-country">
+          <option value="+216">Tunisie 🇹🇳 +216</option>
+          <option value="+33">France 🇫🇷 +33</option>
+          <option value="+32">Belgique 🇧🇪 +32</option>
+          <option value="+41">Suisse 🇨🇭 +41</option>
+          <option value="+212">Maroc 🇲🇦 +212</option>
+          <option value="+213">Algérie 🇩🇿 +213</option>
+          <option value="+44">UK 🇬🇧 +44</option>
+          <option value="+1">USA 🇺🇸 +1</option>
+        </select>
+        <input class="demo-input" type="tel" id="dm-phone" placeholder="Numéro de téléphone"/>
+      </div>
+      <input class="demo-input" type="text" id="dm-company" placeholder="Nom de l'entreprise"/>
+      <select class="demo-select" id="dm-size">
+        <option value="" disabled selected>Taille de l'entreprise</option>
+        <option>1–10 salariés</option>
+        <option>10–50 salariés</option>
+        <option>50–200 salariés</option>
+        <option>200–1 000 salariés</option>
+        <option>1 000–5 000 salariés</option>
+        <option>5 000+ salariés</option>
+      </select>
+      <button class="demo-submit" id="dm-btn" onclick="submitDemo()">Planifier ma démo →</button>
+      <div class="demo-note" id="dm-note">Sans engagement · Réponse sous 24h · Démo adaptée à votre secteur</div>
+    </div>
+    <div class="demo-success" id="demoSuccess">
+      <div style="font-size:3rem;margin-bottom:12px">🎉</div>
+      <h3 id="dm-ok-title">Demande reçue !</h3>
+      <p id="dm-ok-msg">Nous vous contacterons sous 24h pour confirmer votre créneau de démo.<br><br>En attendant, essayez nos agents gratuitement ↓</p>
+      
+    </div>
+  </div>
+</div>
 </body>
 </html>
