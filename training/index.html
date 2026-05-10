@@ -530,9 +530,9 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
     <li><a href="/#pricing" data-i18n="nav.pricing">Pricing</a></li>
   </ul>
   <div class="nav-right">
-    <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
     <span style="color:var(--border);margin:0 2px;">|</span>
-    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
     <button class="btn-nav" onclick="openFormationModal()" data-i18n="nav.cta">Réserver une session</button>
   </div>
 </nav>
@@ -1244,7 +1244,16 @@ en: {
   "f.about":"About","f.blog":"Blog","f.legal":"Legal","f.privacy":"Privacy","f.contact":"Contact","f.copy":"© 2025 AIYDOU · connect@aiydou.com"
 }};
 
-let lang = 'fr';
+let lang = 'en';
+// Auto-detect lang from URL param (?lang=en) or path (/training/)
+(function(){
+  const p = new URLSearchParams(window.location.search).get('lang');
+  const path = window.location.pathname;
+  if(p === 'en' || path.indexOf('/training') !== -1) {
+    lang = 'en';
+    document.documentElement.lang = 'en';
+  }
+})();
 
 function setLang(l) {
   lang = l;
@@ -1308,6 +1317,8 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// Apply language on load
+if(lang === 'en') setLang('en');
 
 // Active nav
 const secs = [...document.querySelectorAll('section[id]')];
