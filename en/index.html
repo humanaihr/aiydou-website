@@ -512,6 +512,22 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   .demo-row,.demo-phone-row{grid-template-columns:1fr}
   .demo-modal{padding:24px 20px}
 }
+
+/* ── MOBILE OVERFLOW FIX ── */
+@media(max-width:600px){
+  html, body { overflow-x: hidden !important; max-width: 100vw; }
+  .prc-grid { grid-template-columns: 1fr !important; }
+  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns: repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  div[style*="grid-template-columns:repeat(4,1fr)"],
+  div[style*="grid-template-columns: repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .container { overflow-x: hidden; }
+  section { overflow-x: hidden; }
+}
 </style>
 </head>
 <body>
@@ -1430,13 +1446,19 @@ function submitDemo(){
   if(!fname||!email){alert('Veuillez renseigner votre prénom et email.');return;}
 
   // Send email via Web3Forms (free, no backend needed)
-  const fd = new FormData();
-  fd.append('access_key', 'cc101d20-2438-4ed5-9c60-fb91819eae7b');
-  fd.append('subject', 'Nouvelle demande de démo - AIYDOU');
-  fd.append('from_name', 'AIYDOU Site');
-  fd.append('email', email);
-  fd.append('message', `Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}`);
-  fetch('https://api.web3forms.com/submit', {method:'POST', body:fd})
+  fetch('https://formspree.io/f/xqenyqva', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({
+      email: email,
+      subject: 'Nouvelle demande de démo - AIYDOU',
+      prenom: fname,
+      nom: lname,
+      poste: job,
+      entreprise: company,
+      message: `Prénom: ${fname}\nNom: ${lname}\nEmail: ${email}\nPoste: ${job}\nEntreprise: ${company}`
+    })
+  })
     .then(r => r.json())
     .then(() => {
       document.getElementById('demoForm').style.display='none';
