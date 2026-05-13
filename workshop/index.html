@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Workshop IA RH — AIYDOU · 10 juin</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -139,14 +139,99 @@ footer p{font-size:13px;color:#9ca3af}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+/* ── TABLET (iPad) ─────────────────────────── */
+@media(max-width:900px){
+  .grid2{grid-template-columns:1fr 1fr;gap:12px}
+  .grid3{grid-template-columns:1fr 1fr;gap:12px}
+  .pricing-layout{grid-template-columns:1fr;gap:28px}
+  .cmp{grid-template-columns:1fr}
+  h1,.hero h1{font-size:26px}
+  h2{font-size:22px}
+  .hero>div[style*="grid"]{grid-template-columns:1fr !important;gap:28px}
+  .hero>div[style*="grid"] img{max-width:340px !important;margin:0 auto;display:block}
+}
+
+/* ── MOBILE (iPhone) ───────────────────────── */
 @media(max-width:640px){
-  h1,.hero h1{font-size:24px}
-  h2{font-size:20px}
-  .grid2,.cmp,.pricing-layout{grid-template-columns:1fr}
-  .grid3{grid-template-columns:1fr}
-  .ctas{flex-direction:column;align-items:stretch}
-  .btn-blue,.btn-outline{text-align:center}
+  /* Typography */
+  body{font-size:15px}
+  h1,.hero h1{font-size:22px;line-height:1.25}
+  h2{font-size:19px;line-height:1.25}
+  .sub{font-size:15px}
+
+  /* Layout */
   .page-wrap,.section-wrap,.nav-outer,.proof-wrap,.hero,.final,.footer-wrap{padding-left:16px;padding-right:16px}
+  .section-wrap{padding-top:44px;padding-bottom:44px}
+
+  /* Nav */
+  .nav-inner{gap:8px}
+  .nav-inner img{height:40px !important}
+  #nav-cta-text{padding:7px 12px;font-size:13px}
+  .nav-inner > div > div{font-size:12px}
+  .nav-inner > div > div button{padding:6px 10px}
+
+  /* Hero */
+  .hero{padding:36px 16px 32px !important}
+  .hero>div[style*="grid"]{
+    grid-template-columns:1fr !important;
+    gap:24px !important;
+  }
+  .hero>div[style*="grid"] img{
+    max-width:260px !important;
+    margin:0 auto;
+    display:block;
+  }
+  .hero .ctas{justify-content:stretch}
+  .btn-blue,.btn-outline{
+    text-align:center;
+    display:block;
+    width:100%;
+    padding:14px 16px;
+  }
+  .badges{justify-content:flex-start}
+  .badge{font-size:10px;padding:4px 10px}
+
+  /* Proof strip */
+  .proof-inner{gap:0;flex-wrap:wrap}
+  .proof-item{width:50%;padding:10px 8px}
+  .proof-item strong{font-size:20px}
+  .proof-item span{font-size:11px}
+
+  /* Grids */
+  .grid2{grid-template-columns:1fr !important;gap:10px}
+  .grid3{grid-template-columns:1fr !important;gap:10px}
+  .cmp{grid-template-columns:1fr !important}
+
+  /* Cards */
+  .pc{padding:16px}
+  .sys{padding:16px}
+  .tcard{padding:16px}
+  .bcard{padding:16px}
+
+  /* Pricing */
+  .pricing-layout{grid-template-columns:1fr !important;gap:20px}
+  .pbox{padding:20px}
+  .price-new{font-size:36px}
+  .pbox::before{font-size:9px;padding:2px 8px}
+
+  /* Comparison */
+  .cmp-bad,.cmp-good{padding:16px}
+
+  /* Final */
+  .final{padding:48px 16px}
+  .final h2{font-size:20px}
+
+  /* Footer */
+  .footer-inner{flex-direction:column;text-align:center;gap:6px}
+  footer p{font-size:12px}
+
+  /* FAQ */
+  .faq-q{font-size:14px}
+  .faq-a{font-size:13px}
+
+  /* CTA buttons full width */
+  .ctas{flex-direction:column;align-items:stretch;width:100%}
+  a[href*="gumroad"].btn-blue{display:block;text-align:center;padding:15px 16px;font-size:15px}
 }
 
 /* Override Gumroad button styles */
@@ -184,6 +269,45 @@ a.nav-cta.gumroad-button {
 
 </style>
 <script src="https://gumroad.com/js/gumroad.js"></script>
+
+<style>
+/* iOS safe area support */
+body { padding-bottom: env(safe-area-inset-bottom); }
+.nav-outer { padding-top: max(16px, env(safe-area-inset-top)); }
+
+/* Prevent horizontal scroll on iOS */
+html, body { overflow-x: hidden; max-width: 100vw; }
+
+/* Fix ticker overflow on mobile */
+@media(max-width:640px){
+  .ticker-inner span { padding: 0 18px; font-size: 10px; }
+  
+  /* Hero grid must go single column on mobile */
+  .hero .hero-grid-inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Nav lang switcher wraps nicely */
+  .nav-inner { flex-wrap: nowrap; }
+  
+  /* Ensure buttons don't overflow */
+  .btn-blue, .btn-outline, a.gumroad-button.btn-blue {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Pricing box label */
+  .pbox::before { left: 12px; white-space: nowrap; }
+
+  /* Section inner max width */
+  .section-inner { max-width: 100%; }
+}
+
+@media(max-width:900px){
+  /* iPad: hero image smaller */
+  .hero img[alt="Agent IA RH"] { max-width: 300px !important; }
+}
+</style>
 </head>
 <body>
 
@@ -211,7 +335,7 @@ a.nav-cta.gumroad-button {
 
 <!-- HERO -->
 <div class="hero reveal" style="padding:60px 32px 48px;text-align:left">
-  <div style="max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+  <div class="hero-grid-inner" style="max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
     <div>
       <div class="hero-tag" data-fr="LIVE WORKSHOP · 10 JUIN · 11H00" data-en="LIVE WORKSHOP · JUNE 10 · 11:00 AM" data-key="hero-tag">LIVE WORKSHOP · 10 JUIN · 11H00</div>
       <h1 style="font-size:30px;margin:0 0 16px">Configure ton premier agent IA RH en 2h pour qu'il <em>travaille pour toi</em> pendant que tu travailles pour tes clients.</h1>
